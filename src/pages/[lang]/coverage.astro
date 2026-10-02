@@ -1,0 +1,219 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import { catalogCounts, coverageSnapshot } from '../../lib/catalog';
+import { dossiers } from '../../../data/dossiers.mjs';
+import { sourceAudit } from '../../../data/source-audit.mjs';
+import { copy } from '../../lib/i18n';
+import { resourceKinds, type Language } from '../../lib/types';
+const lang = Astro.params.lang as Language;
+if (lang !== 'es' && lang !== 'en') return Astro.redirect('/es/', 302);
+const [counts, snapshot] = await Promise.all([catalogCounts(env.DB), coverageSnapshot(env.DB)]);
+Astro.response.headers.set('Cache-Control', 'public, max-age=300');
+const t = copy[lang];
+const depthLabels: Record<string, [string, string]> = {
+  'source-page': ['Página pública', 'Public page'],
+  'repository-metadata': ['Repositorio', 'Repository'],
+  'publisher-metadata': ['Metadatos editoriales', 'Publisher metadata'],
+  abstract: ['Abstract', 'Abstract'],
+  'full-text': ['Texto completo', 'Full text'],
+};
+const dimensions = [
+  {
+    es: 'País de la organización',
+    en: 'Organization country',
+    n: snapshot.unknown.organizationCountry,
+    total: (counts.kinds.product ?? 0) + (counts.kinds.service ?? 0),
+    detailEs: 'Se mide solo en productos y servicios y exige una fuente primaria; no equivale a disponibilidad regional.',
+    detailEn: 'Measured only for products and services and requires a primary source; it does not imply regional availability.',
+  },
+  {
+    es: 'Idioma de la fuente',
+    en: 'Source language',
+    n: snapshot.unknown.sourceLanguage,
+    total: counts.total,
+    detailEs: 'Idioma del material revisado, distinto del idioma de esta ficha.',
+    detailEn: 'Language of the material reviewed, distinct from this record’s translation.',
+  },
+];
+---
+
+<Base lang={lang} title={lang === 'es' ? 'Cobertura editorial' : 'Editorial coverage'}>
+  <header class="article-head reference-head">
+    <p class="eyebrow">{lang === 'es' ? 'Cobertura / Transparencia' : 'Coverage / Transparency'}</p>
+    <h1>{lang === 'es' ? 'Qué cubre esta referencia' : 'What this reference covers'}</h1>
+    <p>{lang === 'es' ? 'Este mapa muestra la selección publicada y la profundidad de lectura en cada entorno. Describe el trabajo editorial del Atlas, no una proporción de la investigación o del mercado mundial.' : 'This map shows the published selection and reading depth in each environment. It describes Atlas editorial work, not a share of worldwide research or the market.'}</p>
+  </header>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">01 / {lang === 'es' ? 'Selección actual' : 'Current selection'}</p>
+      <h2>
+        {counts.total} {lang === 'es' ? 'fichas con fuente' : 'source-linked records'}
+      </h2>
+      <p>
+        {counts.kinds.paper ?? 0} papers · {counts.fullText} {lang === 'es' ? 'papers con lectura completa' : 'papers with full-text review'} · {counts.repositoryMetadata} {lang === 'es' ? 'fichas basadas en metadatos de repositorio' : 'records based on repository metadata'}. {lang === 'es' ? 'Estas categorías indican alcance editorial, no eficacia.' : 'These categories indicate editorial scope, not effectiveness.'}
+      </p>
+    </div>
+    <div class="coverage-grid">
+      {resourceKinds.map((kind) => (
+        <a href={`/${lang}/library?kind=${kind}`}>
+          <span>{t.kinds[kind]}</span>
+          <strong>{counts.kinds[kind] ?? 0}</strong>
+          <small>{lang === 'es' ? 'Abrir fichas' : 'Open records'} ↗</small>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">02 / {lang === 'es' ? 'Mapa de temas' : 'Topic map'}</p>
+      <h2>{lang === 'es' ? 'Dónde hay fichas y dónde faltan' : 'Where records exist and where they are missing'}</h2>
+      <p>{lang === 'es' ? 'Una ficha puede tener varias etiquetas. En cada entorno mostramos también cuántos papers figuran y cuántos se leyeron íntegramente; un cero señala un vacío de esta selección, no del campo.' : 'A record may have several tags. Each environment also shows its paper count and full-text readings; zero marks a gap in this selection, not in the field.'}</p>
+    </div>
+    <div class="coverage-matrix">
+      <div>
+        <h3>{lang === 'es' ? 'Técnicas' : 'Techniques'}</h3>
+        {snapshot.techniques.map((row) => (
+          <a href={`/${lang}/library?technique=${encodeURIComponent(row.label)}`}>
+            <span>{row.label}</span>
+            <strong>{row.count}</strong>
+          </a>
+        ))}
+      </div>
+      <div>
+        <h3>{lang === 'es' ? 'Entornos' : 'Environments'}</h3>
+        {snapshot.environments.map((row) => (
+          <a href={`/${lang}/library?environment=${encodeURIComponent(row.label)}`}>
+            <span>{row.label}<small class="coverage-evidence-detail">{row.papers} papers · {row.fullTextPapers} {lang === 'es' ? 'leídos íntegramente' : 'read in full'}</small></span>
+            <strong>{row.count}</strong>
+          </a>
+        ))}
+      </div>
+      <div>
+        <h3>{lang === 'es' ? 'Material revisado' : 'Material reviewed'}</h3>
+        {snapshot.depths.map((row) => (
+          <div class="coverage-row">
+            <span>{depthLabels[row.label]?.[lang === 'es' ? 0 : 1] ?? row.label}</span>
+            <strong>{row.count}</strong>
+          </div>
+        ))}
+        <p class="small-muted">
+          {Object.keys(dossiers).length} {lang === 'es' ? 'fichas tienen una nota de lectura crítica. El material examinado se indica por separado.' : 'records have a critical-reading note. The material examined is stated separately.'}
+        </p>
+        <a class="coverage-critical-link" href={`/${lang}/library?critical=1`}>
+          {lang === 'es' ? 'Abrir lecturas críticas' : 'Open critical readings'} →
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">03 / {lang === 'es' ? 'Datos que faltan' : 'Missing data'}</p>
+      <h2>{lang === 'es' ? 'Lo desconocido también se publica' : 'Unknowns are published too'}</h2>
+      <p>{lang === 'es' ? 'Estos campos se completarán solo con respaldo verificable. «Desconocido» no significa ausencia de oferta o investigación. Regiones de despliegue y sectores se retiraron del reporte público porque las fuentes primarias rara vez permiten sostener una cobertura consistente.' : 'These fields are filled only with verifiable support. “Unknown” does not mean no offering or research exists. Deployment regions and sectors were withdrawn from public reporting because primary sources rarely support consistent coverage.'}</p>
+    </div>
+    <div class="coverage-unknown">
+      {dimensions.map((item) => (
+        <div>
+          <span>{lang === 'es' ? item.es : item.en}</span>
+          <strong>
+            {item.n} / {item.total}
+          </strong>
+          <p>{lang === 'es' ? 'sin dato verificado' : 'without verified data'}</p>
+          <small>{lang === 'es' ? item.detailEs : item.detailEn}</small>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">04 / {lang === 'es' ? 'Límites documentados' : 'Documented limits'}</p>
+      <h2>{lang === 'es' ? 'Qué no indican estas cifras' : 'What these numbers do not show'}</h2>
+    </div>
+    <div class="coverage-limits">
+      <div>
+        <h3>{lang === 'es' ? 'Geografía' : 'Geography'}</h3>
+        <p>{lang === 'es' ? 'El país de la organización se publica solo para productos y servicios cuando una fuente primaria lo respalda. No se interpreta como lugar de uso ni disponibilidad regional.' : 'Organization country is published only for products and services when supported by a primary source. It is not interpreted as place of use or regional availability.'}</p>
+      </div>
+      <div>
+        <h3>{lang === 'es' ? 'Calidad de la evidencia' : 'Evidence quality'}</h3>
+        <p>{lang === 'es' ? 'Una página comercial, un abstract, un dataset y una prueba institucional permiten conclusiones distintas. El material revisado no es una puntuación de calidad.' : 'A product page, abstract, dataset and institutional trial support different conclusions. The material reviewed is not a quality score.'}</p>
+      </div>
+      <div>
+        <h3>{lang === 'es' ? 'Exhaustividad' : 'Completeness'}</h3>
+        <p>{lang === 'es' ? 'La biblioteca crece con nuevas fuentes y correcciones. Una ausencia en la selección no implica que no existan otros productos, trabajos o experiencias.' : 'The library grows with new sources and corrections. Absence from this selection does not mean other products, research or field reports do not exist.'}</p>
+      </div>
+    </div>
+  </section>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">05 / {lang === 'es' ? 'Mantenimiento' : 'Maintenance'}</p>
+      <h2>{lang === 'es' ? 'Qué tan reciente es la revisión' : 'How current the review is'}</h2>
+      <p>{lang === 'es' ? 'La comprobación de enlaces se distribuye durante el mes; una URL aún no revisada no se considera activa por defecto.' : 'Link checks are spread across the month; an unchecked URL is not assumed active.'}</p>
+    </div>
+    <div class="coverage-unknown">
+      <div>
+        <span>{lang === 'es' ? 'Fichas revisadas en 90 días' : 'Records reviewed within 90 days'}</span>
+        <strong>
+          {snapshot.maintenance.reviewedWithin90} / {counts.total}
+        </strong>
+        <p>{lang === 'es' ? 'por fecha editorial' : 'by editorial review date'}</p>
+      </div>
+      <div>
+        <span>{lang === 'es' ? 'Enlaces comprobados' : 'Links checked'}</span>
+        <strong>
+          {snapshot.maintenance.linksChecked} / {counts.total}
+        </strong>
+        <p>{lang === 'es' ? 'por el monitor gradual' : 'by the gradual monitor'}</p>
+      </div>
+      <div>
+        <span>{lang === 'es' ? 'Enlaces con 404 o 410' : 'Links returning 404 or 410'}</span>
+        <strong>
+          {snapshot.maintenance.brokenLinks} / {snapshot.maintenance.linksChecked}
+        </strong>
+        <p>{lang === 'es' ? 'entre los comprobados' : 'among checked links'}</p>
+      </div>
+    </div>
+  </section>
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="eyebrow">06 / {lang === 'es' ? 'Auditoría de fuentes' : 'Source audit'}</p>
+      <h2>{lang === 'es' ? 'Comprobación completa del catálogo' : 'Full catalog check'}</h2>
+      <p>{lang === 'es' ? `Corte del ${sourceAudit.checked_at}: ${sourceAudit.total} URL principales comprobadas. Un bloqueo del editor o del proveedor requiere revisión manual; no se cuenta como enlace roto.` : `Snapshot from ${sourceAudit.checked_at}: ${sourceAudit.total} primary URLs checked. Publisher or provider blocks require manual review and are not counted as broken links.`}</p>
+    </div>
+    <div class="coverage-unknown">
+      <div>
+        <span>{lang === 'es' ? 'Accesibles automáticamente' : 'Automatically reachable'}</span>
+        <strong>
+          {sourceAudit.reachable_by_automated_check} / {sourceAudit.total}
+        </strong>
+      </div>
+      <div>
+        <span>{lang === 'es' ? 'Revisión manual' : 'Manual review'}</span>
+        <strong>{sourceAudit.needs_manual_review}</strong>
+      </div>
+      <div>
+        <span>{lang === 'es' ? '404/410 confirmados' : 'Confirmed 404/410'}</span>
+        <strong>{sourceAudit.confirmed_404_or_410}</strong>
+      </div>
+    </div>
+    <p class="small-muted">
+      <a href={`/${lang}/editorial-policy`}>{lang === 'es' ? 'Cómo tratamos enlaces y correcciones' : 'How we handle links and corrections'} →</a>
+    </p>
+  </section>
+  <section class="reference-bottom">
+    <div>
+      <p class="eyebrow">{lang === 'es' ? 'Participación' : 'Participation'}</p>
+      <h2>{lang === 'es' ? 'Ayudá a ampliar y corregir el mapa.' : 'Help expand and correct the map.'}</h2>
+      <p>{lang === 'es' ? 'Las nuevas propuestas ingresan como candidatos y se publican solo después de verificar la fuente primaria.' : 'New suggestions enter as candidates and are published only after primary-source review.'}</p>
+    </div>
+    <div class="reference-bottom-actions">
+      <a class="button" href={`/${lang}/contribute`}>
+        {lang === 'es' ? 'Proponer fuente o corrección' : 'Suggest a source or correction'}
+      </a>
+      <a class="button secondary" href={`/${lang}/research/gaps`}>
+        {lang === 'es' ? 'Ver preguntas abiertas' : 'See open questions'}
+      </a>
+    </div>
+  </section>
+</Base>

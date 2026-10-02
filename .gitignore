@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.dev.vars*
+.env*
+!.env.example
+worker-configuration.d.ts
+artifacts/private/
+artifacts/releases/
+artifacts/*.png
+tmp/
+data/seed.sql
+*.log
+.DS_Store
+
+# Local Python caches and disposable reproduction workspaces.
+__pycache__/
+*.py[cod]
+artifacts/atlas-*/
+artifacts/paper-qa-*/
+artifacts/verification/

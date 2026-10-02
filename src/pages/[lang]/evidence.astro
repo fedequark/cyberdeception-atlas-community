@@ -1,0 +1,21 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import { catalogCounts } from '../../lib/catalog';
+import { documents } from '../../lib/documents';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+const counts=await catalogCounts(env.DB);
+const lanes=[
+  {kind:'paper',es:'Investigación publicada',en:'Published research',esText:'Trabajos y surveys. La ficha distingue metadatos, abstract y lectura del texto completo.',enText:'Papers and surveys. Records distinguish metadata, abstract and full-text review.'},
+  {kind:'dataset',es:'Datasets y laboratorios',en:'Datasets and labs',esText:'Datos abiertos para estudiar telemetría, reproducibilidad y límites de los experimentos.',enText:'Open data for studying telemetry, reproducibility and experimental limits.'},
+  {kind:'case-study',es:'Experiencias y observaciones',en:'Field reports and observations',esText:'Pruebas institucionales, investigación de amenazas y relatos publicados por proveedores, etiquetados por origen.',enText:'Institutional trials, threat research and vendor-published stories, labelled by origin.'},
+] as const;
+---
+<Base lang={lang} title={lang==='es'?'Evidencia':'Evidence'}>
+  <header class="article-head reference-head"><p class="eyebrow">{lang==='es'?'Respaldo / Fuentes':'Evidence / Sources'}</p><h1>{lang==='es'?'Qué dicen las fuentes':'What the sources say'}</h1><p>{lang==='es'?'Consultá estudios, datos y experiencias según la pregunta que querés responder. Mostramos quién publicó la fuente y qué material examinamos; una cita localizada todavía requiere interpretación.':'Explore studies, data and field reports by the question you need to answer. We show who published the source and what we reviewed; a located citation still needs interpretation.'}</p></header>
+  <section class="reference-section"><div class="section-heading"><p class="eyebrow">01 / {lang==='es'?'Tipos de evidencia':'Evidence types'}</p><h2>{lang==='es'?'Tres bibliotecas complementarias':'Three complementary libraries'}</h2></div><div class="evidence-lanes">{lanes.map(lane=><a href={`/${lang}/library?kind=${lane.kind}`}><small>{counts.kinds[lane.kind]??0} {lang==='es'?'fichas':'records'}</small><strong>{lang==='es'?lane.es:lane.en}</strong><span>{lang==='es'?lane.esText:lane.enText}</span><b aria-hidden="true">↗</b></a>)}</div></section>
+  <section class="reference-section"><div class="section-heading"><p class="eyebrow">02 / {lang==='es'?'Síntesis editorial':'Editorial synthesis'}</p><h2>{lang==='es'?'Informe, mapa y preguntas abiertas':'Report, map and open questions'}</h2><p>{lang==='es'?'Estas síntesis enlazan fuentes y hacen explícitos los límites de la cobertura.':'These syntheses link sources and make coverage limits explicit.'}</p></div><div class="doc-list">{documents.filter(doc=>doc.category==='research').map(doc=><a href={`/${lang}/research/${doc.slug}`}><span class="eyebrow">{lang==='es'?'Investigación / 2026':'Research / 2026'}</span><strong>{doc[lang]}</strong><span>{lang==='es'?doc.esDescription:doc.enDescription}</span></a>)}</div></section>
+  <section class="reference-bottom"><div><p class="eyebrow">{lang==='es'?'Lectura crítica':'Critical reading'}</p><h2>{lang==='es'?'Una ficha no equivale a una validación independiente.':'A record is not an independent validation.'}</h2><p>{lang==='es'?'Las afirmaciones comerciales permanecen atribuidas al proveedor. Los papers registrados solo con metadatos no se presentan como análisis del texto.':'Commercial statements remain attributed to their vendors. Metadata-only paper records are not presented as full-text analyses.'}</p></div><a class="button secondary" href={`/${lang}/methodology`}>{lang==='es'?'Leer metodología':'Read methodology'} →</a></section>
+</Base>

@@ -1,0 +1,27 @@
+{
+  "critical_reading_count": 50,
+  "exclusions": [
+    "Private submissions",
+    "Editorial revisions and authentication data",
+    "Monitoring events",
+    "Unpublished discovery candidates"
+  ],
+  "files": {
+    "catalog.json": {
+      "bytes": 252336,
+      "sha256": "d81e3a231c1d8ba70cdeefbce84e7f2623f37b82a022c2344476041dfe66c6b6"
+    },
+    "relationships.json": {
+      "bytes": 8027,
+      "sha256": "58425a13e070188ece933e59f2b3403e1076d6b94c927a1380be7cd7d75f0f80"
+    }
+  },
+  "full_text_count": 20,
+  "ordering": "Records sorted by slug; object keys canonicalized recursively",
+  "project": "Cyberdeception Atlas",
+  "record_count": 187,
+  "relationship_count": 69,
+  "release_date": "2026-09-18",
+  "scope": "Published, public source-linked records only",
+  "version": "v2026.09"
+}

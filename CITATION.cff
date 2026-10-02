@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use the Cyberdeception Atlas dataset, evidence model, or evaluation
+  protocol, please cite this release.
+title: 'Cyberdeception Atlas: Source-Bounded Corpus and Evidence Architecture'
+type: dataset
+authors:
+  - family-names: Pacheco
+    given-names: Federico
+version: '2026.10'
+date-released: 2026-10-02
+url: 'https://cyberdeceptionatlas.org'
+repository-code: 'https://github.com/fedequark/cyberdeception-atlas'
+license: CC-BY-4.0
+keywords:
+  - cyber deception
+  - defensive deception
+  - honeypot
+  - honeytoken
+  - evidence synthesis
+  - cybersecurity evaluation
+abstract: >-
+  A bilingual, source-linked corpus and reference implementation for mapping
+  defensive cyber-deception techniques, environments, evidence types, and
+  review depth. Release candidate 2026.10 contains 190 public records, 24
+  single-reviewer full-text syntheses, 50 source-bounded critical readings,
+  reproducible corpus analyses, and an isolated conformance test of the
+  reporting schema.

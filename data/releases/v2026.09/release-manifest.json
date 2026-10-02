@@ -1,0 +1,119 @@
+{
+  "project": "Cyberdeception Atlas",
+  "version": "v2026.09",
+  "release_date": "2026-09-18",
+  "citation": "Federico Pacheco, Cyberdeception Atlas, version 2026.09, 2026.",
+  "doi": null,
+  "data_license": "CC-BY-4.0",
+  "software_license": "MIT",
+  "files": {
+    "CITATION.cff": {
+      "bytes": 981,
+      "sha256": "d68e3724d7406a69557d9b7a0b0a544ad17ffda5d9665da93e0a708009f4ae65"
+    },
+    "CHANGELOG.md": {
+      "bytes": 1408,
+      "sha256": "e427c6c44d062d30ccac1737949b97ca9556a13392eb17d7055bf0419f971360"
+    },
+    "LICENSE": {
+      "bytes": 1073,
+      "sha256": "b7be4ec309f582a0089a996a65742f98b8351d6552d09b1916fc767dcbc84a2c"
+    },
+    "LICENSE-DATA.md": {
+      "bytes": 1193,
+      "sha256": "e0f3a0a770ede6b5cd0f58883eb2cbbdc9340c6566d57fee381e5ec05fc10853"
+    },
+    ".zenodo.json": {
+      "bytes": 1027,
+      "sha256": "a5ee63146b4f300f3b99e91d134d2334a47d9ca5578b7b8f3b61a550239ec288"
+    },
+    "data/releases/v2026.09/README.md": {
+      "bytes": 1539,
+      "sha256": "55a79e67da30c256e27cb486dca6962ebeda06e1db38fa365f33bc62fcc0a7d7"
+    },
+    "data/releases/v2026.09/catalog.json": {
+      "bytes": 252336,
+      "sha256": "d81e3a231c1d8ba70cdeefbce84e7f2623f37b82a022c2344476041dfe66c6b6"
+    },
+    "data/releases/v2026.09/relationships.json": {
+      "bytes": 8027,
+      "sha256": "58425a13e070188ece933e59f2b3403e1076d6b94c927a1380be7cd7d75f0f80"
+    },
+    "data/releases/v2026.09/manifest.json": {
+      "bytes": 799,
+      "sha256": "ed7326683016a693c2446d927077e249dd7c88e36dcdbe0bedb9570474c2c59f"
+    },
+    "data/releases/v2026.09/analysis/summary.json": {
+      "bytes": 3345,
+      "sha256": "4eafe079da30791ac9128580d48b71bcb7264df080f0842a2dd2e2f937e64a69"
+    },
+    "data/releases/v2026.09/analysis/report.md": {
+      "bytes": 2315,
+      "sha256": "5a6b8ff9048f47a69554fe59c60962711377c61f8716a5e764aabfb0904c7c73"
+    },
+    "data/releases/v2026.09/analysis/tables/resource-types.csv": {
+      "bytes": 175,
+      "sha256": "47aec613a0e839396e7725afac245bcc80f6a91e1ff8f9a49c3c5465c3254e33"
+    },
+    "data/releases/v2026.09/analysis/tables/review-basis.csv": {
+      "bytes": 148,
+      "sha256": "980a422760a13ab95fd3302424ad80cacefbc1a681f4fd4c6136f325a47a0956"
+    },
+    "data/releases/v2026.09/analysis/tables/techniques.csv": {
+      "bytes": 148,
+      "sha256": "d65d37933a4b3597a753a476548728c5c7b887bd08ce43dbede36d13fa4ec8dc"
+    },
+    "data/releases/v2026.09/analysis/tables/environments.csv": {
+      "bytes": 154,
+      "sha256": "eb673f4c67a354ade272198babd05ae0f36a4113d5b082472f1a5aa15d5cb422"
+    },
+    "data/releases/v2026.09/analysis/tables/source-hosts.csv": {
+      "bytes": 831,
+      "sha256": "c10d70826d8fa2737df1787f08dd2fa25c71fa9c8a2587569dcd20c517a25b38"
+    },
+    "data/releases/v2026.09/analysis/figures/resource-types.svg": {
+      "bytes": 1839,
+      "sha256": "b46e2db479d745b4b04323f25ed51f14d3609042c7cff184b4eb0f83bd828814"
+    },
+    "data/releases/v2026.09/analysis/figures/review-basis.svg": {
+      "bytes": 1378,
+      "sha256": "9ba903611b1a381a5fca3fcda44cde84a315b44dba2ccce5cdbd8d50688724ae"
+    },
+    "docs/research/CORPUS-PROTOCOL.md": {
+      "bytes": 10233,
+      "sha256": "640be7c1ebb867ddb92fb2afef0a95a4ab309a5002c680b5859a477093039e2b"
+    },
+    "docs/research/CODEBOOK.md": {
+      "bytes": 10505,
+      "sha256": "1e47935ad0d4d2d04550c3bc6adbfabf563748113abec346b7121cb30eed805a"
+    },
+    "experiments/http-decoy-pilot-v1/PROTOCOL.md": {
+      "bytes": 5098,
+      "sha256": "904d7942e8e0fff39bbe192a94128555dd633705b9ca9a0e32aea7b3b00d0943"
+    },
+    "experiments/http-decoy-pilot-v1/run.mjs": {
+      "bytes": 15085,
+      "sha256": "5c447b92aeae076b189a3b86c8e93afff7b4d848a017894264e3d80294395bdb"
+    },
+    "experiments/http-decoy-pilot-v1/results/summary.json": {
+      "bytes": 1977,
+      "sha256": "d82e4aaf21b9e649217da7721ada70fb11bbc5988590ec8f466dc8d3072b3e3a"
+    },
+    "experiments/http-decoy-pilot-v1/results/observations.csv": {
+      "bytes": 53042,
+      "sha256": "98b7a3d909c2a20cca8fa5b77363e64207b01192ebaeb5db94a80abf83c29242"
+    },
+    "experiments/http-decoy-pilot-v1/results/events.json": {
+      "bytes": 15711,
+      "sha256": "278ba3bebea24e510e6d7f0ba2aa7e905ace27ffd220227d33f7650a72942b38"
+    },
+    "experiments/http-decoy-pilot-v1/results/report.md": {
+      "bytes": 1859,
+      "sha256": "5ceacc633cec299818dcf446d38fbecc23ab1b3ad4398bca6f8d0b184b4e08ef"
+    },
+    "experiments/http-decoy-pilot-v1/results/manifest.json": {
+      "bytes": 674,
+      "sha256": "d79793709b29d4e0c14f73a5551b0c708da0e73b81732a4e09eaaf1c1eb0377a"
+    }
+  }
+}

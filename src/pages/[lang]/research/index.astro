@@ -1,0 +1,10 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { documents } from '../../../lib/documents';
+import type { Language } from '../../../lib/types';
+const lang=Astro.params.lang as Language;if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+---
+<Base lang={lang} title={lang==='es'?'Investigación y guías':'Research and guides'}><header class="article-head"><p class="eyebrow">{lang==='es'?'Base de investigación':'Research foundation'}</p><h1>{lang==='es'?'Fuentes, análisis y límites':'Sources, analysis and limits'}</h1><p>{lang==='es'?'El research documenta de dónde viene la información del Atlas, qué se examinó y qué preguntas siguen abiertas. Las guías traducen ese contexto en decisiones para planificar pruebas; cada edición indica su fecha y alcance.':'Research documents where Atlas information comes from, what was examined and what remains open. Guides use that context to plan tests; each edition states its date and scope.'}</p></header>
+  <h2 class="section-title">{lang==='es'?'Investigación':'Research'}</h2><div class="doc-list">{documents.filter(doc=>doc.category==='research').map(doc=><a href={`/${lang}/research/${doc.slug}`}><span class="eyebrow">{lang==='es'?'Revisión 2026':'2026 review'}</span><strong>{doc[lang]}</strong><span>{lang==='es'?doc.esDescription:doc.enDescription}</span></a>)}</div>
+  <h2 class="section-title">{lang==='es'?'Guías':'Guides'}</h2><div class="doc-list">{documents.filter(doc=>doc.category==='guide').map(doc=><a href={`/${lang}/research/${doc.slug}`}><span class="eyebrow">{lang==='es'?'Guía práctica':'Practical guide'}</span><strong>{doc[lang]}</strong><span>{lang==='es'?doc.esDescription:doc.enDescription}</span></a>)}</div>
+</Base>

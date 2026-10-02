@@ -1,0 +1,347 @@
+[
+  {
+    "from": "acalvio-industrial-reference",
+    "relation": "shared OT/ICS deception area",
+    "to": "fortideceptor"
+  },
+  {
+    "from": "acalvio-managed-targeted-intel",
+    "relation": "supports",
+    "to": "acalvio-targeted-threat-intel"
+  },
+  {
+    "from": "agents-shared-memory-2026",
+    "relation": "shared honeytoken area",
+    "to": "canarytokens-open"
+  },
+  {
+    "from": "base4-buda",
+    "relation": "documented by",
+    "to": "buda-user-behavior-2026"
+  },
+  {
+    "from": "base4-cyberdeception-playground",
+    "relation": "documented by",
+    "to": "playground-experiential-learning-2026"
+  },
+  {
+    "from": "base4-dolos-t",
+    "relation": "documented by",
+    "to": "dolos-t-minimal-deception-2024"
+  },
+  {
+    "from": "buda-user-behavior-2026",
+    "relation": "describes",
+    "to": "base4-buda"
+  },
+  {
+    "from": "buda-user-behavior-2026",
+    "relation": "implemented by",
+    "to": "base4-buda"
+  },
+  {
+    "from": "canarytokens-open",
+    "relation": "shared honeytoken research area",
+    "to": "honeytoken-fingerprinting-2020"
+  },
+  {
+    "from": "canarytokens-open",
+    "relation": "shared honeytoken research area",
+    "to": "honeytoken-generator-2024"
+  },
+  {
+    "from": "canarytokens-open",
+    "relation": "related research",
+    "to": "honeywords-2013"
+  },
+  {
+    "from": "canarytokens-open",
+    "relation": "shared identity lure area",
+    "to": "microsoft-defender-identity-honeytoken"
+  },
+  {
+    "from": "countercraft-global-bank-api",
+    "relation": "describes",
+    "to": "countercraft-platform"
+  },
+  {
+    "from": "countercraft-platform",
+    "relation": "has case study",
+    "to": "countercraft-global-bank-api"
+  },
+  {
+    "from": "cowrie",
+    "relation": "shared terminal honeypot research area",
+    "to": "honeygpt-2024"
+  },
+  {
+    "from": "cowrie",
+    "relation": "shared SSH honeypot research area",
+    "to": "llm-honeypot-2024"
+  },
+  {
+    "from": "cowrie",
+    "relation": "shared honeynet research area",
+    "to": "zenodo-cyberlab-honeynet"
+  },
+  {
+    "from": "cydec-state-2024",
+    "relation": "related field survey",
+    "to": "cydec-survey-2020"
+  },
+  {
+    "from": "cydec-state-2024",
+    "relation": "related taxonomy",
+    "to": "mitre-engage"
+  },
+  {
+    "from": "cydec-survey-2020",
+    "relation": "related field survey",
+    "to": "cydec-state-2024"
+  },
+  {
+    "from": "cydec-survey-2020",
+    "relation": "related taxonomy",
+    "to": "game-taxonomy-2017"
+  },
+  {
+    "from": "deception-challenges-2021",
+    "relation": "realistic artifact generation",
+    "to": "buda-user-behavior-2026"
+  },
+  {
+    "from": "deception-mtd-simulation-2023",
+    "relation": "shared MTD research area",
+    "to": "game-taxonomy-2017"
+  },
+  {
+    "from": "doi-10-1109-eurospw61312-2024-00053",
+    "relation": "application deception area",
+    "to": "countercraft-platform"
+  },
+  {
+    "from": "doi-10-11591-ijece-v15i1-pp1089-1098",
+    "relation": "shared OT/ICS area",
+    "to": "fortideceptor"
+  },
+  {
+    "from": "dolos-t-minimal-deception-2024",
+    "relation": "describes",
+    "to": "base4-dolos-t"
+  },
+  {
+    "from": "fidelis-childrens-hospital",
+    "relation": "describes",
+    "to": "fidelis-deception"
+  },
+  {
+    "from": "fidelis-deception",
+    "relation": "has case study",
+    "to": "fidelis-childrens-hospital"
+  },
+  {
+    "from": "fortideceptor",
+    "relation": "shared OT/ICS deception area",
+    "to": "acalvio-industrial-reference"
+  },
+  {
+    "from": "fortideceptor",
+    "relation": "shared OT/ICS deception area",
+    "to": "gh-mushorg-conpot"
+  },
+  {
+    "from": "galah",
+    "relation": "shared LLM honeypot research area",
+    "to": "honeygpt-2024"
+  },
+  {
+    "from": "galah",
+    "relation": "shared LLM honeypot research area",
+    "to": "llm-honeypot-2024"
+  },
+  {
+    "from": "game-taxonomy-2017",
+    "relation": "related taxonomy",
+    "to": "cydec-survey-2020"
+  },
+  {
+    "from": "game-taxonomy-2017",
+    "relation": "shared MTD research area",
+    "to": "deception-mtd-simulation-2023"
+  },
+  {
+    "from": "gh-mushorg-conpot",
+    "relation": "shared OT/ICS deception area",
+    "to": "fortideceptor"
+  },
+  {
+    "from": "gh-mushorg-tanner",
+    "relation": "shared web honeypot ecosystem",
+    "to": "glastopf"
+  },
+  {
+    "from": "glastopf",
+    "relation": "shared web honeypot ecosystem",
+    "to": "gh-mushorg-tanner"
+  },
+  {
+    "from": "glastopf",
+    "relation": "shared web honeypot ecosystem",
+    "to": "snare"
+  },
+  {
+    "from": "honeygpt-2024",
+    "relation": "shared terminal honeypot research area",
+    "to": "cowrie"
+  },
+  {
+    "from": "honeygpt-2024",
+    "relation": "shared LLM honeypot research area",
+    "to": "galah"
+  },
+  {
+    "from": "honeytoken-auth-2021",
+    "relation": "extends honeyword approach",
+    "to": "honeywords-2013"
+  },
+  {
+    "from": "honeytoken-fingerprinting-2020",
+    "relation": "shared honeytoken research area",
+    "to": "canarytokens-open"
+  },
+  {
+    "from": "honeytoken-generator-2024",
+    "relation": "shared honeytoken research area",
+    "to": "canarytokens-open"
+  },
+  {
+    "from": "honeywords-2013",
+    "relation": "foundational honeytoken concept",
+    "to": "canarytokens-open"
+  },
+  {
+    "from": "ibm-itg27-deception-2026",
+    "relation": "uses",
+    "to": "deception-pro-platform"
+  },
+  {
+    "from": "llm-honeypot-2024",
+    "relation": "shared SSH honeypot research area",
+    "to": "cowrie"
+  },
+  {
+    "from": "llm-honeypot-2024",
+    "relation": "shared LLM honeypot research area",
+    "to": "galah"
+  },
+  {
+    "from": "microsoft-defender-identity-honeytoken",
+    "relation": "shared identity lure area",
+    "to": "canarytokens-open"
+  },
+  {
+    "from": "mitre-d3fend",
+    "relation": "complementary defensive framework",
+    "to": "mitre-engage"
+  },
+  {
+    "from": "mitre-engage",
+    "relation": "complementary defensive framework",
+    "to": "mitre-d3fend"
+  },
+  {
+    "from": "mitre-engage",
+    "relation": "shared practice and evaluation area",
+    "to": "ncsc-deception-trials"
+  },
+  {
+    "from": "ncsc-deception-trials",
+    "relation": "shared practice and evaluation area",
+    "to": "mitre-engage"
+  },
+  {
+    "from": "opencanary",
+    "relation": "open-source counterpart",
+    "to": "thinkst-canary"
+  },
+  {
+    "from": "playground-experiential-learning-2026",
+    "relation": "describes",
+    "to": "base4-cyberdeception-playground"
+  },
+  {
+    "from": "playground-experiential-learning-2026",
+    "relation": "implemented by",
+    "to": "base4-cyberdeception-playground"
+  },
+  {
+    "from": "proofpoint-cargo-decoy-2026",
+    "relation": "uses",
+    "to": "deception-pro-platform"
+  },
+  {
+    "from": "proofpoint-energy-shadow",
+    "relation": "describes",
+    "to": "proofpoint-shadow"
+  },
+  {
+    "from": "proofpoint-shadow",
+    "relation": "has case study",
+    "to": "proofpoint-energy-shadow"
+  },
+  {
+    "from": "riot-games-tracebit",
+    "relation": "describes",
+    "to": "tracebit-platform"
+  },
+  {
+    "from": "snare",
+    "relation": "shared web honeypot ecosystem",
+    "to": "glastopf"
+  },
+  {
+    "from": "t-pot",
+    "relation": "includes or integrates",
+    "to": "cowrie"
+  },
+  {
+    "from": "t-pot",
+    "relation": "includes or integrates",
+    "to": "dionaea"
+  },
+  {
+    "from": "t-pot",
+    "relation": "includes or integrates",
+    "to": "galah"
+  },
+  {
+    "from": "thinkst-canary",
+    "relation": "open-source counterpart",
+    "to": "opencanary"
+  },
+  {
+    "from": "three-decades-2021",
+    "relation": "surveys honeypot family",
+    "to": "t-pot"
+  },
+  {
+    "from": "tracebit-platform",
+    "relation": "has case study",
+    "to": "riot-games-tracebit"
+  },
+  {
+    "from": "tracebit-platform",
+    "relation": "shared cloud deception area",
+    "to": "zenodo-cloud-honeynet"
+  },
+  {
+    "from": "zenodo-cloud-honeynet",
+    "relation": "shared cloud deception area",
+    "to": "tracebit-platform"
+  },
+  {
+    "from": "zenodo-cyberlab-honeynet",
+    "relation": "shared honeynet research area",
+    "to": "cowrie"
+  }
+]

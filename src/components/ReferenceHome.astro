@@ -1,0 +1,191 @@
+---
+import { topics } from '../lib/topics';
+import type { Language } from '../lib/types';
+const { lang, counts } = Astro.props as {
+  lang: Language;
+  counts: { total: number; kinds: Record<string, number>; fullText: number; repositoryMetadata: number; critical: number };
+};
+const techniqueTopics = topics.filter((topic) => topic.group === 'technique');
+const environmentTopics = topics.filter((topic) => topic.group === 'environment');
+const pathways = [
+  {
+    id: '01',
+    href: `/${lang}/topics`,
+    es: 'Definí la pregunta',
+    en: 'Define the question',
+    esText: 'Empezá por el comportamiento que querés detectar y el entorno donde podría ocurrir.',
+    enText: 'Start with the behavior you want to detect and where it could happen.',
+  },
+  {
+    id: '02',
+    href: `/${lang}/solutions`,
+    es: 'Explorá opciones',
+    en: 'Explore options',
+    esText: 'Encontrá técnicas, software, productos y servicios relacionados con esa hipótesis.',
+    enText: 'Find techniques, software, products and services related to that hypothesis.',
+  },
+  {
+    id: '03',
+    href: `/${lang}/evidence`,
+    es: 'Revisá el respaldo',
+    en: 'Check the evidence',
+    esText: 'Mirá qué fuente se examinó y qué permite afirmar antes de comparar alternativas.',
+    enText: 'See which source was reviewed and what it supports before comparing options.',
+  },
+  {
+    id: '04',
+    href: `/${lang}/practice`,
+    es: 'Prepará la prueba',
+    en: 'Plan the test',
+    esText: 'Definí señal esperada, referencia, controles y medidas para decidir qué hacer después.',
+    enText: 'Set expected signals, a baseline, controls and measures for the next decision.',
+  },
+];
+---
+
+<header class="reference-hero">
+  <div class="reference-hero-main">
+    <p class="eyebrow">{lang === 'es' ? 'Cyberdeception para equipos de seguridad' : 'Cyber deception for security teams'}</p>
+    <h1>
+      {lang === 'es' ? 'Del señuelo a una' : 'From decoys to'} <em>{lang === 'es' ? 'decisión medible.' : 'measurable decisions.'}</em>
+    </h1>
+    <p>{lang === 'es' ? 'Explorá técnicas y soluciones para un problema de detección, revisá qué evidencia respalda cada opción y prepará un piloto con señales y medidas definidas.' : 'Explore techniques and solutions for a detection problem, check the evidence behind each option and plan a pilot with defined signals and measures.'}</p>
+    <div class="hero-actions">
+      <a class="button" href={`/${lang}/topics`}>{lang === 'es' ? 'Explorar por problema' : 'Explore by problem'} →</a>
+      <a class="button secondary" href={`/${lang}/practice`}>{lang === 'es' ? 'Planificar una prueba' : 'Plan a test'} →</a>
+    </div>
+    <p class="hero-trust">{lang === 'es' ? 'Cada ficha muestra la fuente consultada y el material revisado. Las afirmaciones comerciales y los resultados de pruebas se identifican por separado.' : 'Every record shows its source and what was reviewed. Vendor claims and test results are identified separately.'}</p>
+    <form class="reference-search" action={`/${lang}/library`} method="get">
+      <label class="sr-only" for="reference-query">
+        {lang === 'es' ? 'Buscar en la biblioteca' : 'Search the library'}
+      </label>
+      <span aria-hidden="true">⌕</span>
+      <input id="reference-query" name="q" type="search" placeholder={lang === 'es' ? '¿Buscás una técnica o recurso concreto?' : 'Looking for a specific technique or resource?'} maxlength="120" />
+      <button class="button" type="submit">
+        {lang === 'es' ? 'Buscar' : 'Search'} →
+      </button>
+    </form>
+  </div>
+  <aside class="reference-hero-aside hero-route" aria-label={lang === 'es' ? 'Recorrido del Atlas' : 'Atlas workflow'}>
+    <p class="eyebrow">{lang === 'es' ? 'Tu recorrido' : 'Your route'}</p>
+    <ol>
+      <li><span>01</span>{lang === 'es' ? 'Una conducta a detectar' : 'A behavior to detect'}</li>
+      <li><span>02</span>{lang === 'es' ? 'Opciones con contexto' : 'Options with context'}</li>
+      <li><span>03</span>{lang === 'es' ? 'Una prueba que puedas medir' : 'A test you can measure'}</li>
+    </ol>
+    <a href={`/${lang}/methodology`}>{lang === 'es' ? 'Cómo trabajamos con las fuentes' : 'How we handle sources'} →</a>
+  </aside>
+</header>
+
+<section class="reference-section" id="decisiones" aria-labelledby="routes-title">
+  <div class="section-heading">
+    <p class="eyebrow">01 / {lang === 'es' ? 'Decisiones' : 'Decisions'}</p>
+    <h2 id="routes-title">{lang === 'es' ? 'De la pregunta a un piloto' : 'From question to pilot'}</h2>
+    <p>{lang === 'es' ? 'El Atlas organiza un recorrido de trabajo. Podés entrar por la etapa que necesitás y conservar la fuente y los límites de cada dato.' : 'Atlas organizes a practical route. Enter at the step you need while keeping the source and limits of each piece of information in view.'}</p>
+  </div>
+  <div class="pathway-grid">
+    {pathways.map((path) => (
+      <a class="pathway-card" href={path.href}>
+        <span class="pathway-index">
+          {path.id}
+        </span>
+        <strong>{lang === 'es' ? path.es : path.en}</strong>
+        <span>{lang === 'es' ? path.esText : path.enText}</span>
+        <i aria-hidden="true">↗</i>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section class="reference-section scenario-section" aria-labelledby="scenario-title">
+  <div class="section-heading">
+    <p class="eyebrow">02 / {lang === 'es' ? 'Ejemplo' : 'Example'}</p>
+    <h2 id="scenario-title">{lang === 'es' ? 'Una credencial que nadie debería usar' : 'A credential nobody should use'}</h2>
+    <p>{lang === 'es' ? 'Así se ve el recorrido cuando la pregunta es detectar un uso inesperado de credenciales.' : 'Here is the route when the question is how to detect unexpected credential use.'}</p>
+  </div>
+  <div class="scenario-panel">
+    <div class="scenario-prompt">
+      <span class="sample-label">{lang === 'es' ? 'Pregunta defensiva' : 'Defensive question'}</span>
+      <p>{lang === 'es' ? '¿Cómo sabríamos si alguien encuentra y utiliza una credencial señuelo?' : 'How would we know if someone found and used a decoy credential?'}</p>
+      <a href={`/${lang}/topics/honeytokens`}>{lang === 'es' ? 'Entender los honeytokens' : 'Understand honeytokens'} →</a>
+    </div>
+    <ol class="scenario-steps">
+      <li><span>01</span><div><strong>{lang === 'es' ? 'Ubicá la técnica' : 'Locate the technique'}</strong><p>{lang === 'es' ? 'Relacioná el señuelo con identidad, acceso y la señal que esperás observar.' : 'Connect the lure to identity, access and the signal you expect to see.'}</p><a href={`/${lang}/topics/identity`}>{lang === 'es' ? 'Ver identidad y credenciales' : 'See identity and credentials'} →</a></div></li>
+      <li><span>02</span><div><strong>{lang === 'es' ? 'Examiná opciones y fuentes' : 'Examine options and sources'}</strong><p>{lang === 'es' ? 'Filtrá recursos relacionados; comprobá qué material se revisó en cada ficha.' : 'Filter related resources; check what was reviewed in each record.'}</p><a href={`/${lang}/library?technique=Honeytoken&environment=Identity`}>{lang === 'es' ? 'Explorar recursos relacionados' : 'Explore related resources'} →</a></div></li>
+      <li><span>03</span><div><strong>{lang === 'es' ? 'Definí la prueba' : 'Define the test'}</strong><p>{lang === 'es' ? 'Registrá uso esperado, controles legítimos, alerta y responsable de respuesta.' : 'Record expected use, legitimate controls, the alert and who responds.'}</p><a href={`/${lang}/research/start`}>{lang === 'es' ? 'Abrir la guía de primera implementación' : 'Open the first deployment guide'} →</a></div></li>
+    </ol>
+  </div>
+  <p class="scenario-note">{lang === 'es' ? 'El Atlas ayuda a formular y documentar la prueba. El resultado en tu entorno todavía debe medirse.' : 'Atlas helps frame and document the test. The result in your environment still has to be measured.'}</p>
+</section>
+
+<section class="reference-section reference-topics" aria-labelledby="topics-title">
+  <div class="section-heading">
+    <p class="eyebrow">03 / {lang === 'es' ? 'Orientación' : 'Orientation'}</p>
+    <h2 id="topics-title">{lang === 'es' ? 'Explorá por técnica y entorno' : 'Explore by technique and environment'}</h2>
+    <p>{lang === 'es' ? 'Una técnica indica qué hace el señuelo; el entorno indica dónde se ubica. Usá ambas dimensiones para acotar la pregunta.' : 'A technique describes what the lure does; an environment describes where it is placed. Use both to narrow the question.'}</p>
+  </div>
+  <div class="topic-columns">
+    <div>
+      <h3>{lang === 'es' ? 'Técnicas' : 'Techniques'}</h3>
+      <div class="topic-link-list">
+        {techniqueTopics.map((topic) => (
+          <a href={`/${lang}/topics/${topic.slug}`}>
+            <span>{lang === 'es' ? topic.title_es : topic.title_en}</span>
+            <b aria-hidden="true">→</b>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h3>{lang === 'es' ? 'Entornos' : 'Environments'}</h3>
+      <div class="topic-link-list">
+        {environmentTopics.map((topic) => (
+          <a href={`/${lang}/topics/${topic.slug}`}>
+            <span>{lang === 'es' ? topic.title_es : topic.title_en}</span>
+            <b aria-hidden="true">→</b>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+  <a class="text-action" href={`/${lang}/topics`}>
+    {lang === 'es' ? 'Ver todos los temas' : 'See all topics'} →
+  </a>
+</section>
+
+<section class="reference-section reference-record" aria-labelledby="records-title">
+  <div class="section-heading">
+    <p class="eyebrow">04 / {lang === 'es' ? 'Respaldo' : 'Evidence'}</p>
+    <h2 id="records-title">{lang === 'es' ? 'Una opción necesita contexto' : 'An option needs context'}</h2>
+    <p>{lang === 'es' ? 'Una ficha enlaza el recurso con su fuente y dice qué material se examinó. Eso permite saber qué queda por comprobar.' : 'A record links a resource to its source and states what was reviewed. That shows what still needs checking.'}</p>
+  </div>
+  <div class="record-explainer">
+    <div>
+      <span class="sample-label">{lang === 'es' ? 'Ejemplo · artículo' : 'Example · paper'}</span>
+      <h3>Honeywords</h3>
+      <p>{lang === 'es' ? 'Una propuesta académica sobre contraseñas señuelo y señales de uso. La ficha identifica la fuente y declara los límites de su síntesis editorial.' : 'An academic proposal on decoy passwords and signals of use. The record identifies the source and states the limits of its editorial synthesis.'}</p>
+      <a href={`/${lang}/resource/honeywords-2013`}>{lang === 'es' ? 'Examinar ficha y fuente' : 'Examine record and source'} ↗</a>
+    </div>
+    <div class="record-steps">
+      <p><b>01</b> {lang === 'es' ? 'De dónde sale la información.' : 'Where the information comes from.'}</p>
+      <p><b>02</b> {lang === 'es' ? 'Qué material se revisó.' : 'What material was reviewed.'}</p>
+      <p><b>03</b> {lang === 'es' ? 'Qué afirma la fuente y qué sigue abierto.' : 'What the source supports and what remains open.'}</p>
+    </div>
+  </div>
+</section>
+
+<section class="reference-bottom">
+  <div>
+    <p class="eyebrow">{lang === 'es' ? 'Transparencia' : 'Transparency'}</p>
+    <h2>{lang === 'es' ? 'Fuentes visibles. Límites visibles.' : 'Visible sources. Visible limits.'}</h2>
+    <p>{lang === 'es' ? `Esta versión reúne ${counts.total} fichas, incluidos ${counts.kinds.paper ?? 0} papers. ${counts.fullText} papers tienen una síntesis de texto completo; ${counts.repositoryMetadata} fichas se basan en metadatos de repositorio. Las ${counts.critical} notas de lectura crítica se cuentan por separado. Es un mapa editorial en evolución, con cobertura y límites visibles.` : `This version contains ${counts.total} records, including ${counts.kinds.paper ?? 0} papers. ${counts.fullText} papers have a full-text synthesis; ${counts.repositoryMetadata} records rely on repository metadata. The ${counts.critical} critical-reading notes are counted separately. This is an evolving editorial map with visible coverage and limits.`}</p>
+  </div>
+  <div class="reference-bottom-actions">
+    <a class="button" href={`/${lang}/library`}>
+      {lang === 'es' ? 'Explorar recursos' : 'Explore resources'}
+    </a>
+    <a class="button secondary" href={`/${lang}/methodology`}>
+      {lang === 'es' ? 'Leer cómo investigamos' : 'Read how we research'}
+    </a>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import { copy } from '../lib/i18n';
+import type { Language } from '../lib/types';
+import '../styles/global.css';
+import '../styles/utility.css';
+import '../styles/atlas.css';
+import '../styles/reference.css';
+import '../styles/field.css';
+const { lang, title, description = copy[lang].description } = Astro.props as {lang: Language;title?:string;description?:string};
+const t = copy[lang];
+const path = Astro.url.pathname.replace(/^\/(es|en)/, '');
+const alternate = lang === 'es' ? 'en' : 'es';
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#071112" />
+    <title>{title ? `${title} · ${t.title}` : t.title}</title>
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico?v=2" sizes="any" />
+    <link rel="canonical" href={`https://cyberdeceptionatlas.org${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang={alternate} href={`https://cyberdeceptionatlas.org/${alternate}${path}`} />
+    <link rel="alternate" hreflang={lang} href={`https://cyberdeceptionatlas.org${Astro.url.pathname}`} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Cyberdeception Atlas RSS" href="/rss.xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a href={`/${lang}`} class="brand" aria-label={t.title}>
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span><strong>Cyberdeception</strong><small>{lang==='es'?'Atlas · Pregunta → prueba':'Atlas · Question → test'}</small></span>
+        </a>
+        <span class="edition-mark" aria-hidden="true">{lang==='es'?'Fuentes · Contexto · Pruebas':'Sources · Context · Tests'}<br/>Corpus 2026—09</span>
+        <nav aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
+          <a href={`/${lang}`} aria-current={Astro.url.pathname===`/${lang}`||Astro.url.pathname===`/${lang}/`?'page':undefined}>{lang==='es'?'Inicio':'Home'}</a>
+          <a href={`/${lang}/topics`} aria-current={Astro.url.pathname.startsWith(`/${lang}/topics`)?'page':undefined}>{lang==='es'?'Por problema':'By problem'}</a>
+          <a href={`/${lang}/library`} aria-current={Astro.url.pathname.startsWith(`/${lang}/library`)?'page':undefined}>{lang==='es'?'Biblioteca':'Library'}</a>
+          <a href={`/${lang}/evidence`} aria-current={Astro.url.pathname.startsWith(`/${lang}/evidence`)?'page':undefined}>{lang==='es'?'Evidencia':'Evidence'}</a>
+          <a href={`/${lang}/solutions`} aria-current={Astro.url.pathname.startsWith(`/${lang}/solutions`)?'page':undefined}>{lang==='es'?'Ecosistema':'Ecosystem'}</a>
+          <a href={`/${lang}/practice`} aria-current={Astro.url.pathname.startsWith(`/${lang}/practice`)?'page':undefined}>{lang==='es'?'Planificar':'Plan a test'}</a>
+        </nav>
+        <a class="language-switch" href={`/${alternate}${path}`} lang={alternate}>{alternate.toUpperCase()}</a>
+      </div>
+    </header>
+    <main id="main" class="shell"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p><b>Cyberdeception Atlas</b><br/>{lang === 'es' ? 'De la pregunta de detección a una prueba medible' : 'From detection question to measurable test'}</p>
+        <div><a href={`/${lang}/coverage`}>{lang==='es'?'Cobertura':'Coverage'}</a><a href={`/${lang}/assistant`}>{t.assistant}</a><a href={`/${lang}/contribute`}>{t.contribute}</a><a href={`/${lang}/saved`}>{t.saved}</a><a href={`/${lang}/downloads`}>{t.download}</a><a href={`/${lang}/methodology`}>{t.methods}</a><a href={`/${lang}/editorial-policy`}>{lang==='es'?'Política editorial':'Editorial policy'}</a><a href="/rss.xml">{t.rss}</a></div>
+      </div>
+    </footer>
+  </body>
+</html>

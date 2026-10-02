@@ -1,0 +1,32 @@
+{
+  "title": "Cyberdeception Atlas: Source-Bounded Corpus and Evidence Architecture",
+  "description": "Versioned public corpus, evidence model, reproducible analysis, and worked reporting-schema evaluation for defensive cyber deception. Release candidate v2026.10 contains 190 source-linked records and 24 single-reviewer full-text readings and explicitly separates review depth from evidence quality. It is a curated corpus, not a claim of exhaustive worldwide coverage.",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Pacheco, Federico"
+    }
+  ],
+  "keywords": [
+    "cyber deception",
+    "defensive deception",
+    "honeypot",
+    "honeytoken",
+    "evidence synthesis",
+    "cybersecurity evaluation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://cyberdeceptionatlas.org",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/fedequark/cyberdeception-atlas",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

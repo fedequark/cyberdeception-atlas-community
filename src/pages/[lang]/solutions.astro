@@ -1,0 +1,20 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import { catalogCounts } from '../../lib/catalog';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+const counts=await catalogCounts(env.DB);
+const lanes=[
+  {kind:'product',es:'Productos',en:'Products',esText:'Capacidades comerciales descritas por sus fabricantes, con superficie y fuente visibles.',enText:'Commercial capabilities described by vendors, with environment and source visible.'},
+  {kind:'service',es:'Servicios',en:'Services',esText:'Implementación, operación gestionada, consultoría e inteligencia ofrecidas por prestadores.',enText:'Implementation, managed operation, consulting and intelligence offered by providers.'},
+  {kind:'software',es:'Software abierto',en:'Open software',esText:'Repositorios de honeypots, tokens y plataformas con información de licencia y mantenimiento cuando consta.',enText:'Honeypot, token and platform repositories with license and maintenance details when available.'},
+] as const;
+---
+<Base lang={lang} title={lang==='es'?'Ecosistema':'Ecosystem'}>
+  <header class="article-head reference-head"><p class="eyebrow">{lang==='es'?'Opciones / Ecosistema':'Options / Ecosystem'}</p><h1>{lang==='es'?'Explorá opciones con contexto':'Explore options with context'}</h1><p>{lang==='es'?'Buscá software, productos y servicios relacionados con tu hipótesis. Cada ficha muestra su fuente y el material revisado para que sepas qué información falta antes de una prueba propia.':'Find software, products and services related to your hypothesis. Each record shows its source and what was reviewed, so you can see what is missing before running your own test.'}</p></header>
+  <section class="reference-section"><div class="section-heading"><p class="eyebrow">01 / {lang==='es'?'Oferta':'Offerings'}</p><h2>{lang==='es'?'Tres formas de obtener capacidades':'Three ways to obtain capabilities'}</h2></div><div class="evidence-lanes">{lanes.map(lane=><a href={`/${lang}/library?kind=${lane.kind}`}><small>{counts.kinds[lane.kind]??0} {lang==='es'?'fichas':'records'}</small><strong>{lang==='es'?lane.es:lane.en}</strong><span>{lang==='es'?lane.esText:lane.enText}</span><b aria-hidden="true">↗</b></a>)}</div></section>
+  <section class="reference-section"><div class="section-heading"><p class="eyebrow">02 / {lang==='es'?'Decisiones':'Decisions'}</p><h2>{lang==='es'?'Comparar antes de adoptar':'Compare before adopting'}</h2></div><div class="reference-two-column decision-grid"><a href={`/${lang}/research/ecosystem`}><small>{lang==='es'?'PANORAMA':'OVERVIEW'}</small><strong>{lang==='es'?'Mapa del ecosistema':'Ecosystem map'}</strong><span>{lang==='es'?'Instituciones, proveedores, proyectos y relaciones documentadas.':'Institutions, vendors, projects and documented relationships.'}</span><b>↗</b></a><a href={`/${lang}/research/evaluate`}><small>{lang==='es'?'GUÍA':'GUIDE'}</small><strong>{lang==='es'?'Evaluar ofertas':'Evaluate offerings'}</strong><span>{lang==='es'?'Hipótesis, prueba, observabilidad, costo y límites de evidencia.':'Hypothesis, trial, observability, cost and evidence limits.'}</span><b>↗</b></a></div></section>
+  <p class="note">{lang==='es'?'La presencia en esta biblioteca no implica recomendación, cobertura geográfica ni resultados verificados de un producto o servicio.':'Inclusion in this library does not imply endorsement, geographic availability or verified product or service outcomes.'}</p>
+</Base>

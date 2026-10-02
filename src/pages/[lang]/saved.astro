@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+---
+<Base lang={lang} title={lang==='es'?'Búsquedas guardadas':'Saved searches'}>
+  <header class="article-head"><p class="eyebrow">{lang==='es'?'Colección personal':'Personal collection'}</p><h1>{lang==='es'?'Búsquedas guardadas':'Saved searches'}</h1><p>{lang==='es'?'Tus búsquedas se guardan en este navegador.':'Your searches are stored in this browser.'}</p></header>
+  <div id="saved-list" class="doc-list"></div>
+  <script>
+    const element=document.getElementById('saved-list');
+    const saved=JSON.parse(localStorage.getItem('cyberdeception-saved-searches')||'[]') as unknown[];
+    if(element){
+      for(const url of saved){
+        if(typeof url!=='string'||!/^\/(es|en)(\/|\?)/.test(url))continue;
+        const row=document.createElement('div');
+        const link=document.createElement('a');link.href=url;link.textContent=new URL(url,location.origin).searchParams.get('q')||url;
+        const button=document.createElement('button');button.className='button secondary small';button.textContent=document.documentElement.lang==='es'?'Quitar':'Remove';
+        button.onclick=()=>{const list=(JSON.parse(localStorage.getItem('cyberdeception-saved-searches')||'[]') as string[]).filter(item=>item!==url);localStorage.setItem('cyberdeception-saved-searches',JSON.stringify(list));row.remove()};
+        row.appendChild(link);row.appendChild(button);element.appendChild(row);
+      }
+      if(!element.childElementCount)element.textContent=document.documentElement.lang==='es'?'Todavía no guardaste búsquedas.':'No saved searches yet.';
+    }
+  </script>
+</Base>

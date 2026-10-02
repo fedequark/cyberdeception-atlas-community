@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { documents } from '../../lib/documents';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+const steps=[
+  {id:'01',slug:'start',es:'Diseñar una primera operación',en:'Design a first operation'},
+  {id:'02',slug:'evaluate',es:'Evaluar una solución',en:'Evaluate a solution'},
+  {id:'03',slug:'protocol',es:'Comparar resultados con un protocolo',en:'Compare outcomes with a protocol'},
+  {id:'04',slug:'lab',es:'Construir un laboratorio',en:'Build a lab'},
+  {id:'05',slug:'measure',es:'Medir los resultados',en:'Measure outcomes'},
+] as const;
+---
+<Base lang={lang} title={lang==='es'?'Planificar una prueba':'Plan a test'}>
+  <header class="article-head reference-head"><p class="eyebrow">{lang==='es'?'Planificar / Guías':'Plan a test / Guides'}</p><h1>{lang==='es'?'Convertí una idea en una prueba medible':'Turn an idea into a measurable test'}</h1><p>{lang==='es'?'Definí qué conducta querés observar, qué señal esperarías y qué resultado te permitiría decidir el próximo paso. Estas guías ayudan a documentar la prueba; el resultado debe medirse en tu entorno.':'Define the behavior to observe, the signal you expect and the result that would inform your next step. These guides help document a test; its outcome has to be measured in your environment.'}</p></header>
+  <section class="reference-section"><div class="section-heading"><p class="eyebrow">01 / {lang==='es'?'Itinerario':'Learning path'}</p><h2>{lang==='es'?'Cinco decisiones prácticas':'Five practical decisions'}</h2></div><div class="practice-steps">{steps.map(step=><a href={`/${lang}/research/${step.slug}`}><span>{step.id}</span><strong>{lang==='es'?step.es:step.en}</strong><small>{lang==='es'?documents.find(doc=>doc.slug===step.slug)?.esDescription:documents.find(doc=>doc.slug===step.slug)?.enDescription}</small><b>↗</b></a>)}</div></section>
+  <section class="reference-bottom"><div><p class="eyebrow">{lang==='es'?'Punto de partida':'Starting point'}</p><h2>{lang==='es'?'Elegí primero una pregunta defensiva.':'Choose a defensive question first.'}</h2><p>{lang==='es'?'La elección de una técnica o producto llega después de definir qué comportamiento se desea observar, qué riesgos tiene el señuelo y cómo se medirá su valor.':'A technique or product is chosen after defining the behavior to observe, lure risks and how value will be measured.'}</p></div><a class="button secondary" href={`/${lang}/topics`}>{lang==='es'?'Explorar técnicas':'Explore techniques'} →</a></section>
+</Base>

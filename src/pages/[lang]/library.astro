@@ -1,0 +1,282 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { browseResources, catalogCounts } from '../../lib/catalog';
+import { copy } from '../../lib/i18n';
+import { resourceKinds, type Language, type ResourceKind } from '../../lib/types';
+const lang = Astro.params.lang as Language;
+if (lang !== 'es' && lang !== 'en') return Astro.redirect('/es/', 302);
+const t = copy[lang];
+const params = Astro.url.searchParams;
+const kind = resourceKinds.includes(params.get('kind') as ResourceKind)
+  ? (params.get('kind') as ResourceKind)
+  : undefined;
+const page = Math.max(Number(params.get('page') ?? 1) || 1, 1);
+const q = (params.get('q') ?? '').slice(0, 120);
+const environment = (params.get('environment') ?? '').slice(0, 80);
+const technique = (params.get('technique') ?? '').slice(0, 80);
+const critical = params.get('critical') === '1';
+const reviewBasis = [
+  'source-page',
+  'repository-metadata',
+  'publisher-metadata',
+  'abstract',
+  'full-text',
+].includes(params.get('depth') ?? '')
+  ? (params.get('depth') ?? '')
+  : '';
+const sourceLanguage = ['es', 'en', 'pt'].includes(params.get('source_language') ?? '')
+  ? (params.get('source_language') ?? '')
+  : '';
+const countries = (
+  await env.DB.prepare(
+    "SELECT DISTINCT json_extract(data,'$.organization_country') AS country FROM resources WHERE status='published' AND kind IN ('product','service') AND json_extract(data,'$.organization_country') IS NOT NULL ORDER BY country",
+  ).all<{ country: string }>()
+).results.map((row) => row.country);
+const country = countries.includes(params.get('country') ?? '')
+  ? (params.get('country') ?? '')
+  : '';
+const [results, counts] = await Promise.all([
+  browseResources(env.DB, {
+    q,
+    kind,
+    environment: environment || undefined,
+    technique: technique || undefined,
+    critical,
+    reviewBasis: reviewBasis || undefined,
+    sourceLanguage: sourceLanguage || undefined,
+    country: country || undefined,
+    page,
+  }),
+  catalogCounts(env.DB),
+]);
+if (q && results.total === 0 && page === 1) {
+  await env.DB.prepare(
+    "INSERT INTO search_metrics(day,locale,zero_result_count) VALUES(date('now'),?,1) ON CONFLICT(day,locale) DO UPDATE SET zero_result_count=zero_result_count+1",
+  )
+    .bind(lang)
+    .run();
+}
+const filterUrl = new URL(Astro.url);
+filterUrl.searchParams.delete('page');
+---
+
+<Base lang={lang} title={lang === 'es' ? 'Biblioteca' : 'Library'}>
+  <section class="page-intro">
+    <div>
+      <p class="eyebrow">
+        {lang === 'es' ? 'Biblioteca / fichas con fuente' : 'Library / sourced records'}
+      </p>
+      <h1>{lang === 'es' ? 'Biblioteca de recursos' : 'Resource library'}</h1>
+      <p>
+        {lang === 'es'
+          ? 'Buscá por tipo, técnica, entorno o notas de lectura crítica. Cada ficha indica su fuente y qué material se revisó.'
+          : 'Search by kind, technique, environment or critical-reading notes. Each record states its source and what material was reviewed.'}
+      </p>
+    </div>
+    <div class="stat-box">
+      <strong>{counts.total}</strong>
+      <span>{lang === 'es' ? 'recursos publicados' : 'published resources'}</span>
+    </div>
+  </section>
+  <div class="explore-grid">
+    <aside class="filter-panel">
+      <h2>{t.filters}</h2>
+      <form method="get">
+        <div class="field">
+          <label for="kind">{t.type}</label>
+          <select id="kind" name="kind">
+            <option value="">{t.all}</option>
+            {resourceKinds.map((value) => (
+              <option value={value} selected={kind === value}>
+                {t.kinds[value]}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div class="field">
+          <label for="environment">{lang === 'es' ? 'Entorno' : 'Environment'}</label>
+          <select id="environment" name="environment">
+            <option value="">{t.all}</option>
+            {['Network', 'Endpoint', 'Identity', 'Cloud', 'Application', 'OT/ICS', 'IoT'].map(
+              (value) => (
+                <option selected={environment === value}>{value}</option>
+              ),
+            )}
+          </select>
+        </div>
+        <div class="field">
+          <label for="technique">{lang === 'es' ? 'Técnica' : 'Technique'}</label>
+          <select id="technique" name="technique">
+            <option value="">{t.all}</option>
+            {[
+              'Honeypot',
+              'Honeytoken',
+              'Decoy',
+              'Adversary engagement',
+              'Moving target defense',
+            ].map((value) => (
+              <option selected={technique === value}>{value}</option>
+            ))}
+          </select>
+        </div>
+        <div class="field">
+          <label for="depth">{lang === 'es' ? 'Material revisado' : 'Material reviewed'}</label>
+          <select id="depth" name="depth">
+            <option value="">{t.all}</option>
+            {[
+              ['source-page', lang === 'es' ? 'Página pública' : 'Public page'],
+              ['repository-metadata', lang === 'es' ? 'Repositorio' : 'Repository'],
+              [
+                'publisher-metadata',
+                lang === 'es' ? 'Metadatos editoriales' : 'Publisher metadata',
+              ],
+              ['abstract', 'Abstract'],
+              ['full-text', lang === 'es' ? 'Texto completo' : 'Full text'],
+            ].map(([value, label]) => (
+              <option value={value} selected={reviewBasis === value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div class="field">
+          <label for="source_language">
+            {lang === 'es' ? 'Idioma de la fuente' : 'Source language'}
+          </label>
+          <select id="source_language" name="source_language">
+            <option value="">{t.all}</option>
+            {[
+              ['es', 'Español'],
+              ['en', 'English'],
+              ['pt', 'Português'],
+            ].map(([value, label]) => (
+              <option value={value} selected={sourceLanguage === value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
+        {countries.length > 0 && (
+          <div class="field">
+            <label for="country">
+              {lang === 'es' ? 'País de la organización' : 'Organization country'}
+            </label>
+            <select id="country" name="country">
+              <option value="">{t.all}</option>
+              {countries.map((value) => (
+                <option value={value} selected={country === value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        <label class="critical-filter">
+          <input type="checkbox" name="critical" value="1" checked={critical} />
+          {lang === 'es' ? 'Con lectura crítica' : 'With critical reading'}
+        </label>
+        <input type="hidden" name="q" value={q} />
+        <button class="button" type="submit">
+          {lang === 'es' ? 'Aplicar filtros' : 'Apply filters'}
+        </button>
+        <a class="clear-link" href={`/${lang}/library`}>
+          {t.clear}
+        </a>
+      </form>
+    </aside>
+    <div class="results-panel">
+      <form class="search-form" method="get">
+        <label class="sr-only" for="q">
+          {t.search}
+        </label>
+        <input
+          id="q"
+          type="search"
+          name="q"
+          value={q}
+          placeholder={t.searchPlaceholder}
+          maxlength="120"
+        />
+        <input type="hidden" name="kind" value={kind ?? ''} />
+        <input type="hidden" name="environment" value={environment} />
+        <input type="hidden" name="technique" value={technique} />
+        <input type="hidden" name="depth" value={reviewBasis} />
+        <input type="hidden" name="source_language" value={sourceLanguage} />
+        <input type="hidden" name="country" value={country} />
+        {critical && <input type="hidden" name="critical" value="1" />}
+        <button class="button" type="submit">
+          {t.search}
+        </button>
+      </form>
+      <div class="results-head">
+        <h2>{lang === 'es' ? 'Resultados' : 'Results'}</h2>
+        <span>
+          {results.total} {lang === 'es' ? 'encontrados' : 'found'}
+        </span>
+      </div>
+      <form action={`/${lang}/compare`} method="get">
+        <div class="resource-grid">
+          {results.items.map((resource) => (
+            <ResourceCard
+              resource={resource}
+              lang={lang}
+              compare={resource.kind === 'product' || resource.kind === 'software'}
+            />
+          ))}
+        </div>
+        {results.items.length === 0 && (
+          <div class="empty">
+            <p>{t.noResults}</p>
+            <a href={`/${lang}/library`}>{t.clear}</a>
+          </div>
+        )}
+        <div class="compare-actions">
+          <button type="submit" class="button secondary small">
+            {t.compare}
+          </button>
+          <button
+            type="button"
+            id="save-search"
+            class="button secondary small"
+            data-url={Astro.url.pathname + Astro.url.search}
+          >
+            {t.saved}
+          </button>
+        </div>
+      </form>
+      <nav class="pagination" aria-label={lang === 'es' ? 'Páginas' : 'Pages'}>
+        {page > 1 && (
+          <a
+            href={`${filterUrl.pathname}${filterUrl.search}${filterUrl.search ? '&' : '?'}page=${page - 1}`}
+          >
+            {lang === 'es' ? 'Anterior' : 'Previous'}
+          </a>
+        )}
+        {page * 24 < results.total && (
+          <a
+            href={`${filterUrl.pathname}${filterUrl.search}${filterUrl.search ? '&' : '?'}page=${page + 1}`}
+          >
+            {lang === 'es' ? 'Siguiente' : 'Next'}
+          </a>
+        )}
+      </nav>
+      <p class="note">{t.methodNote}</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('save-search')?.addEventListener('click', (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const url = button.dataset.url;
+      const saved = JSON.parse(
+        localStorage.getItem('cyberdeception-saved-searches') || '[]',
+      ) as string[];
+      if (url && !saved.includes(url)) {
+        saved.push(url);
+        localStorage.setItem('cyberdeception-saved-searches', JSON.stringify(saved));
+        button.textContent = document.documentElement.lang === 'es' ? 'Guardada' : 'Saved';
+      }
+    });
+  </script>
+</Base>

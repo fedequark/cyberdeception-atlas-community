@@ -1,0 +1,150 @@
+{
+  "version": "v2026.10",
+  "release_date": "2026-10-02",
+  "records": 190,
+  "by_kind": {
+    "case-study": 9,
+    "community": 2,
+    "dataset": 8,
+    "framework": 2,
+    "paper": 46,
+    "product": 13,
+    "service": 11,
+    "software": 99
+  },
+  "by_review_basis": {
+    "abstract": 1,
+    "full-text": 24,
+    "publisher-metadata": 21,
+    "repository-metadata": 99,
+    "source-page": 45
+  },
+  "by_evidence": {
+    "community-directory": 1,
+    "dataset-record": 8,
+    "framework-documentation": 2,
+    "full-text-review": 24,
+    "institutional-evaluation": 1,
+    "paper-abstract": 1,
+    "product-documentation": 2,
+    "provider-datasheet": 1,
+    "provider-offering": 10,
+    "published-case": 1,
+    "publisher-metadata": 21,
+    "repository-documentation": 63,
+    "repository-metadata": 36,
+    "research-access-program": 1,
+    "threat-research-observation": 2,
+    "vendor-claim": 11,
+    "vendor-published-case": 5
+  },
+  "by_technique": {
+    "Adversary engagement": 16,
+    "Decoy": 56,
+    "Honeypot": 120,
+    "Honeytoken": 26,
+    "Moving target defense": 5
+  },
+  "by_environment": {
+    "Application": 37,
+    "Cloud": 18,
+    "Endpoint": 11,
+    "Identity": 21,
+    "IoT": 5,
+    "Network": 130,
+    "OT/ICS": 12
+  },
+  "by_source_host": {
+    "55jaiio.sadio.org.ar": 1,
+    "acalvio.com": 5,
+    "advancedcsg.net": 1,
+    "akamai.com": 1,
+    "arxiv.org": 12,
+    "canary.tools": 1,
+    "countercraftsec.com": 2,
+    "cyberfidelity.co": 1,
+    "d3fend.mitre.org": 1,
+    "daleosynergy.eu": 1,
+    "deception.pro": 1,
+    "docs.rapid7.com": 1,
+    "doi.org": 28,
+    "ecca-group.com": 1,
+    "fidelissecurity.com": 2,
+    "fortinet.com": 1,
+    "github.com": 101,
+    "ibm.com": 1,
+    "jstage.jst.go.jp": 1,
+    "lastnode.com": 1,
+    "learn.microsoft.com": 1,
+    "maindefense.de": 1,
+    "maple-networks.com": 1,
+    "ncsc.gov.uk": 1,
+    "neroswarm.com": 1,
+    "people.csail.mit.edu": 1,
+    "proofpoint.com": 3,
+    "quirso.de": 1,
+    "researchgate.net": 1,
+    "revistas.unlp.edu.ar": 1,
+    "sitwll.com": 1,
+    "tracebit.com": 2,
+    "vbn.aau.dk": 1,
+    "wipro.com": 1,
+    "zenodo.org": 8,
+    "zscaler.com": 1
+  },
+  "by_year": {
+    "2011": 1,
+    "2012": 2,
+    "2013": 3,
+    "2014": 3,
+    "2015": 5,
+    "2016": 4,
+    "2017": 9,
+    "2018": 7,
+    "2019": 4,
+    "2020": 13,
+    "2021": 13,
+    "2022": 6,
+    "2023": 14,
+    "2024": 20,
+    "2025": 12,
+    "2026": 31,
+    "unknown": 43
+  },
+  "missingness": {
+    "year": {
+      "missing": 43,
+      "applicable": 190
+    },
+    "doi_papers": {
+      "missing": 10,
+      "applicable": 46
+    },
+    "source_language": {
+      "missing": 124,
+      "applicable": 190
+    },
+    "organization_country_products_services": {
+      "missing": 22,
+      "applicable": 24
+    }
+  },
+  "sensitivity": {
+    "all_published": 190,
+    "with_critical_reading": 50,
+    "full_text_only": 24,
+    "source_or_full_text": 69,
+    "excluding_publisher_metadata": 169,
+    "excluding_repository_and_publisher_metadata": 70,
+    "excluding_repository_metadata": 91,
+    "papers_with_full_text": 24,
+    "non_github_sources": 89
+  },
+  "cautions": [
+    "Counts describe this curated corpus, not the worldwide cyber-deception field.",
+    "Tags are multi-valued, so technique and environment counts do not sum to the corpus total.",
+    "Review basis records what was read; it is not a study-quality score.",
+    "The historical candidate and exclusion ledger is incomplete for the baseline corpus.",
+    "Full-text syntheses in this release were completed by one reviewer; page anchors and adjudication were not retained."
+  ]
+}

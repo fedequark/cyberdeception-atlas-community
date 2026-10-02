@@ -1,0 +1,77 @@
+{
+  "experiment_id": "http-decoy-pilot-v1",
+  "protocol_version": "1.0",
+  "executed_at_utc": "2026-09-18T18:14:34.858Z",
+  "runtime": {
+    "node": "v24.18.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "experiment_runtime_ms": 1976.464,
+    "external_dependencies": 0
+  },
+  "design": {
+    "repetitions_per_scenario": 10,
+    "decoy_scenarios_per_condition": 40,
+    "benign_controls_per_condition": 40,
+    "sequential_requests": true,
+    "network_scope": "127.0.0.1 only"
+  },
+  "baseline": {
+    "requests": 80,
+    "decoy_scenarios": 40,
+    "benign_controls": 40,
+    "decoy_alerts": 0,
+    "missed_decoy_alerts": 40,
+    "unwanted_triggers": 0,
+    "investigable_alerts": 0,
+    "total_alerts": 0,
+    "scenario_coverage": 0,
+    "unwanted_trigger_rate": 0,
+    "investigable_alert_rate": null,
+    "latency_ms": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    }
+  },
+  "intervention": {
+    "requests": 80,
+    "decoy_scenarios": 40,
+    "benign_controls": 40,
+    "decoy_alerts": 40,
+    "missed_decoy_alerts": 0,
+    "unwanted_triggers": 0,
+    "investigable_alerts": 40,
+    "total_alerts": 40,
+    "scenario_coverage": 1,
+    "unwanted_trigger_rate": 0,
+    "investigable_alert_rate": 1,
+    "latency_ms": {
+      "n": 40,
+      "min": 0.222,
+      "median": 14.889,
+      "p95": 17.022,
+      "max": 17.483
+    }
+  },
+  "safety_incidents": [],
+  "not_measured": [
+    "Human installation time",
+    "Human tuning and maintenance time",
+    "Human investigation time",
+    "Decoy realism or recognition",
+    "Production alert delivery latency",
+    "Risk reduction"
+  ],
+  "hypothesis_checks": {
+    "intervention_coverage_is_complete": true,
+    "intervention_has_no_unwanted_triggers": true,
+    "intervention_alerts_are_investigable": true,
+    "intervention_p95_under_100_ms": true,
+    "baseline_has_no_decoy_events": true,
+    "no_safety_incidents": true
+  },
+  "hypothesis_supported": true
+}

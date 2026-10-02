@@ -1,0 +1,61 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../../layouts/Base.astro';
+import ResourceCard from '../../../components/ResourceCard.astro';
+import { getResource, relatedResources } from '../../../lib/catalog';
+import { copy } from '../../../lib/i18n';
+import { parseData, type Language } from '../../../lib/types';
+import { dossiers } from '../../../../data/dossiers.mjs';
+const lang = Astro.params.lang as Language;
+if (lang !== 'es' && lang !== 'en') return Astro.redirect('/es/',302);
+const slug = Astro.params.slug ?? '';
+const resource = await getResource(env.DB, slug);
+if (!resource) return new Response(lang==='es'?'Recurso no encontrado':'Resource not found',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}});
+const t = copy[lang];
+const data = parseData(resource);
+const related = await relatedResources(env.DB,resource);
+const sources = (await env.DB.prepare('SELECT * FROM sources WHERE resource_id = ? ORDER BY accessed_at DESC').bind(resource.id).all<{url:string;title:string;accessed_at:string;review_basis:string;note:string}>()).results;
+const summary = lang==='es'?resource.summary_es:resource.summary_en;
+const dossier=dossiers[resource.slug];
+const basisLabels:Record<string,[string,string]>={
+  'source-page':['página pública','public page'],
+  'repository-metadata':['metadatos y documentación del repositorio','repository metadata and documentation'],
+  'publisher-metadata':['metadatos editoriales','publisher metadata'],
+  'abstract':['abstract del autor','author abstract'],
+  'full-text':['texto completo','full text']
+};
+const basis=basisLabels[data.review_basis]?.[lang==='es'?0:1]??data.review_basis;
+const isFullText=data.review_basis==='full-text';
+const pageAnchors=data.page_anchors??[];
+const limits=isFullText&&data.limits_es?(lang==='es'?data.limits_es:data.limits_en):data.limitations_es?(lang==='es'?data.limitations_es:data.limitations_en):dossier?(lang==='es'?dossier.limitations_es:dossier.limitations_en):null;
+---
+<Base lang={lang} title={resource.name} description={summary}>
+  <header class="article-head"><p class="breadcrumb"><a href={`/${lang}/library`}>{lang==="es"?"Biblioteca":"Library"}</a> / <a href={`/${lang}/library?kind=${resource.kind}`}>{t.kinds[resource.kind]}</a></p><p class="eyebrow">{t.kinds[resource.kind]}</p><h1>{resource.name}</h1><p>{summary}</p><div class="detail-tags">{[...data.techniques,...data.environments].map(value=><span>{value}</span>)}</div></header>
+  <div class="detail-grid"><article class="prose">
+    {!dossier && <><h2>{lang==='es'?'Qué sabemos':'What we know'}</h2><p>{summary}</p></>}
+    {resource.kind==='case-study' && <p class="note">{t.casesDisclosure}</p>}
+    {data.disclosure_es && <p class="note">{lang==='es'?data.disclosure_es:data.disclosure_en}</p>}
+    {dossier && !isFullText && <section class="dossier-note" aria-label={lang==='es'?'Lectura crítica':'Critical reading'}><p class="eyebrow">{lang==='es'?'Lectura crítica · 15 sep 2026':'Critical reading · Sep 15, 2026'}</p><h2>{lang==='es'?'Alcance de la fuente':'What the source supports'}</h2><p>{lang==='es'?dossier.observation_es:dossier.observation_en}</p><h3>{lang==='es'?'Pregunta para evaluar':'Question for evaluation'}</h3><p>{lang==='es'?dossier.question_es:dossier.question_en}</p><p class="small-muted">{lang==='es'?'Esta nota se basa en el «Material revisado» indicado en la ficha. No representa una prueba independiente.':'This note is bounded by the “Material reviewed” shown in the record. It is not an independent test.'}</p></section>}
+    <h2>{t.limitations}</h2><p>{limits??(lang==='es'?'La fuente enlazada permite describir este recurso, pero esta ficha aún no documenta resultados comparables ni una revisión crítica específica.':'The linked source supports a description of this resource, but this record does not yet document comparable outcomes or a specific critical review.')}</p>
+    {resource.kind==='paper' && <p class="note">{t.paperBasis}: {basis}. {data.review_basis!=='full-text'&&(lang==='es'?'No se analizaron los resultados del texto completo.':'Full-text results were not analyzed.')}</p>}
+    {data.full_text_reviewed_at && <section class="fulltext-review"><p class="eyebrow">{lang==='es'?'Revisión de texto completo':'Full-text review'} · {data.full_text_reviewed_at}</p><h2>{lang==='es'?'Diseño y alcance':'Design and scope'}</h2><p>{lang==='es'?data.design_es:data.design_en}</p><h3>{lang==='es'?'Hallazgo principal':'Main finding'}</h3><p>{lang==='es'?data.finding_es:data.finding_en}</p><h3>{lang==='es'?'Límites de la evidencia':'Evidence limits'}</h3><p>{lang==='es'?data.limits_es:data.limits_en}</p>{data.full_text_source_url&&<p><a href={data.full_text_source_url} target="_blank" rel="noopener noreferrer">{lang==='es'?'Abrir texto completo examinado':'Open reviewed full text'}</a></p>}{pageAnchors.length>0&&<p class="small-muted">{lang==='es'?'Localizadores':'Locators'}: {pageAnchors.join('; ')}</p>}{data.provenance_note_en&&<p class="small-muted">{lang==='es'?data.provenance_note_es:data.provenance_note_en}</p>}</section>}
+    <h2>{lang==='es'?'Fuentes y trazabilidad':'Sources and provenance'}</h2><ol class="source-list">{sources.map(source=><li><a class="source-link" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a><br/><span class="small-muted">{source.review_basis} · {source.accessed_at}</span></li>)}</ol>
+    <p class="small-muted">{t.reviewed}: {resource.reviewed_at}. {lang==='es'?'La ficha puede actualizarse cuando aparezca nueva evidencia.':'This record may change when new evidence is found.'}</p>
+    <p class="citation-actions"><a href={`/api/citation/${resource.slug}?format=ris`}>RIS</a> · <a href={`/api/citation/${resource.slug}?format=bibtex`}>BibTeX</a></p>
+  </article><aside class="metadata" aria-label={lang==='es'?'Datos del recurso':'Resource metadata'}><dl>
+    <dt>{t.type}</dt><dd>{t.kinds[resource.kind]}</dd>
+    <dt>{lang==='es'?'Responsable':'Organization'}</dt><dd>{resource.organization}</dd>
+    {resource.year && <><dt>{t.published}</dt><dd>{resource.year}</dd></>}
+    <dt>{lang==='es'?'Material revisado':'Material reviewed'}</dt><dd>{basis}</dd>
+    {data.doi && <><dt>DOI</dt><dd><a href={`https://doi.org/${data.doi}`}>{data.doi}</a></dd></>}
+    {data.license && <><dt>{lang==='es'?'Licencia':'License'}</dt><dd>{data.license}</dd></>}
+    {data.organization_country && <><dt>{lang==='es'?'País de la organización':'Organization country'}</dt><dd>{data.organization_country}</dd></>}
+    {data.deployment_regions?.length && <><dt>{lang==='es'?'Regiones documentadas':'Documented regions'}</dt><dd>{data.deployment_regions.join(', ')}</dd></>}
+    {data.sectors?.length && <><dt>{lang==='es'?'Sectores documentados':'Documented sectors'}</dt><dd>{data.sectors.join(', ')}</dd></>}
+    {data.source_language && <><dt>{lang==='es'?'Idioma de la fuente':'Source language'}</dt><dd>{data.source_language}</dd></>}
+    <dt>{t.source}</dt><dd><a href={resource.source_url} target="_blank" rel="noopener noreferrer">{data.source_title ?? resource.name}</a></dd>
+    <dt>{t.reviewed}</dt><dd>{resource.reviewed_at}</dd>
+    <dt>{lang==='es'?'Método':'Method'}</dt><dd><a href={`/${lang}/methodology`}>{lang==='es'?'Criterios editoriales':'Editorial criteria'}</a></dd>
+  </dl></aside></div>
+  {related.length>0 && <section aria-label={t.related}><h2 class="section-title">{t.related}</h2><div class="resource-grid">{related.map(item=><ResourceCard resource={item} lang={lang}/>)}</div></section>}
+</Base>

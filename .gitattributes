@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+# Research snapshots and execution manifests record hashes of exact file bytes.
+docs/paper/** -text
+reviews/peer-review/** -text
+experiments/ai-protocol-v2/** -text
+experiments/reporting-schema-machine-v1/** -text
+experiments/source-bounded-ai-audit-v1/** -text
+scripts/** -text

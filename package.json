@@ -1,0 +1,47 @@
+{
+  "name": "cyberdeception-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "test": "vitest run",
+    "check": "wrangler types && astro check && tsc --noEmit -p tsconfig.worker.json",
+    "types": "wrangler types",
+    "format:check": "prettier --check src/lib/catalog.ts src/pages/api/export.ts src/pages/[lang]/library.astro src/pages/api/admin/resource-edit.ts",
+    "catalog:validate": "node scripts/validate-catalog.mjs",
+    "catalog:audit": "node scripts/audit-catalog.mjs",
+    "verify:journeys": "node scripts/verify-reference-journeys.mjs",
+    "catalog:seed": "node scripts/build-seed.mjs",
+    "research:freeze": "node scripts/freeze-corpus.mjs",
+    "research:analyze": "node scripts/analyze-corpus.mjs",
+    "research:reproduce": "node scripts/reproduce-release.mjs",
+    "research:package": "node scripts/build-research-release.mjs",
+    "experiment:http-decoy": "node experiments/http-decoy-pilot-v1/run.mjs",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "db:seed": "wrangler d1 execute DB --local --file data/seed.sql"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.3.3",
+    "ajv": "^8.17.1",
+    "astro": "^7.3.5",
+    "jose": "^6.1.0",
+    "marked": "^18.0.13",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@cloudflare/workers-types": "latest",
+    "agent-browser": "^0.37.1",
+    "prettier": "^3.9.7",
+    "prettier-plugin-astro": "^1.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.147.0"
+  }
+}

@@ -1,0 +1,1070 @@
+[
+  {
+    "id": "gh-cymmetria-ciscoasa-honeypot",
+    "slug": "gh-cymmetria-ciscoasa-honeypot",
+    "kind": "software",
+    "name": "ciscoasa_honeypot",
+    "organization": "Cymmetria",
+    "source_url": "https://github.com/Cymmetria/ciscoasa_honeypot",
+    "summary_es": "Repositorio sobre simulación de Cisco ASA; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Cisco ASA simulation; documentation and maintenance require further review.",
+    "year": 2018,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "Cymmetria/ciscoasa_honeypot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2018-11-23T11:47:10Z"
+    }
+  },
+  {
+    "id": "gh-malwaretech-citrixhoneypot",
+    "slug": "gh-malwaretech-citrixhoneypot",
+    "kind": "software",
+    "name": "CitrixHoneypot",
+    "organization": "MalwareTech",
+    "source_url": "https://github.com/MalwareTech/CitrixHoneypot",
+    "summary_es": "Repositorio sobre observación de explotación Citrix; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about observation of Citrix exploitation; documentation and maintenance require further review.",
+    "year": 2020,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "MalwareTech/CitrixHoneypot",
+      "archived": false,
+      "last_push": "2020-01-15T13:58:22Z"
+    }
+  },
+  {
+    "id": "gh-sap-cloud-active-defense",
+    "slug": "gh-sap-cloud-active-defense",
+    "kind": "software",
+    "name": "cloud-active-defense",
+    "organization": "SAP",
+    "source_url": "https://github.com/SAP/cloud-active-defense",
+    "summary_es": "Repositorio sobre señuelos en aplicaciones cloud; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about cloud-application decoys; documentation and maintenance require further review.",
+    "year": 2024,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Cloud"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "SAP/cloud-active-defense",
+      "license": "Apache-2.0",
+      "archived": false,
+      "last_push": "2026-09-11T13:26:11Z"
+    }
+  },
+  {
+    "id": "gh-mushorg-conpot",
+    "slug": "gh-mushorg-conpot",
+    "kind": "software",
+    "name": "conpot",
+    "organization": "mushorg",
+    "source_url": "https://github.com/mushorg/conpot",
+    "summary_es": "Repositorio sobre simulación de sistemas industriales; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about industrial-system simulation; documentation and maintenance require further review.",
+    "year": 2013,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "OT/ICS"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "mushorg/conpot",
+      "license": "GPL-2.0",
+      "archived": false,
+      "last_push": "2026-09-14T22:24:15Z"
+    }
+  },
+  {
+    "id": "gh-aelth-ddospot",
+    "slug": "gh-aelth-ddospot",
+    "kind": "software",
+    "name": "ddospot",
+    "organization": "aelth",
+    "source_url": "https://github.com/aelth/ddospot",
+    "summary_es": "Repositorio sobre observación de abusos de servicios UDP; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about observation of UDP-service abuse; documentation and maintenance require further review.",
+    "year": 2020,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "aelth/ddospot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2020-12-27T09:28:27Z"
+    }
+  },
+  {
+    "id": "gh-securitytw-delilah",
+    "slug": "gh-securitytw-delilah",
+    "kind": "software",
+    "name": "delilah",
+    "organization": "SecurityTW",
+    "source_url": "https://github.com/SecurityTW/delilah",
+    "summary_es": "Repositorio sobre simulación de Elasticsearch; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Elasticsearch simulation; documentation and maintenance require further review.",
+    "year": 2015,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "SecurityTW/delilah",
+      "archived": false,
+      "last_push": "2015-06-11T12:30:14Z"
+    }
+  },
+  {
+    "id": "gh-ciscocsirt-dhp",
+    "slug": "gh-ciscocsirt-dhp",
+    "kind": "software",
+    "name": "dhp",
+    "organization": "ciscocsirt",
+    "source_url": "https://github.com/ciscocsirt/dhp",
+    "summary_es": "Repositorio sobre simulación de la API de Docker; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Docker API simulation; documentation and maintenance require further review.",
+    "year": 2020,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Cloud"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "ciscocsirt/dhp",
+      "license": "Apache-2.0",
+      "archived": false,
+      "last_push": "2020-10-06T14:41:21Z"
+    }
+  },
+  {
+    "id": "gh-dmpayton-django-admin-honeypot",
+    "slug": "gh-dmpayton-django-admin-honeypot",
+    "kind": "software",
+    "name": "django-admin-honeypot",
+    "organization": "dmpayton",
+    "source_url": "https://github.com/dmpayton/django-admin-honeypot",
+    "summary_es": "Repositorio sobre login señuelo de administración Django; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about decoy Django admin login; documentation and maintenance require further review.",
+    "year": 2011,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "dmpayton/django-admin-honeypot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2024-04-10T14:22:38Z"
+    }
+  },
+  {
+    "id": "gh-tg12-dns-honeypot",
+    "slug": "gh-tg12-dns-honeypot",
+    "kind": "software",
+    "name": "dns-honeypot",
+    "organization": "tg12",
+    "source_url": "https://github.com/tg12/dns-honeypot",
+    "summary_es": "Repositorio sobre simulación de DNS; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about DNS simulation; documentation and maintenance require further review.",
+    "year": 2025,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "tg12/dns-honeypot",
+      "archived": true,
+      "last_push": "2026-05-16T15:39:03Z"
+    }
+  },
+  {
+    "id": "gh-d1str0-drupot",
+    "slug": "gh-d1str0-drupot",
+    "kind": "software",
+    "name": "drupot",
+    "organization": "d1str0",
+    "source_url": "https://github.com/d1str0/drupot",
+    "summary_es": "Repositorio sobre simulación de Drupal; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Drupal simulation; documentation and maintenance require further review.",
+    "year": 2019,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "d1str0/drupot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2019-07-14T03:50:37Z"
+    }
+  },
+  {
+    "id": "gh-jordan-wright-elastichoney",
+    "slug": "gh-jordan-wright-elastichoney",
+    "kind": "software",
+    "name": "elastichoney",
+    "organization": "jordan-wright",
+    "source_url": "https://github.com/jordan-wright/elastichoney",
+    "summary_es": "Repositorio sobre simulación de Elasticsearch; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Elasticsearch simulation; documentation and maintenance require further review.",
+    "year": 2015,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "jordan-wright/elastichoney",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2015-07-14T19:27:37Z"
+    }
+  },
+  {
+    "id": "gh-mycert-espot",
+    "slug": "gh-mycert-espot",
+    "kind": "software",
+    "name": "ESPot",
+    "organization": "mycert",
+    "source_url": "https://github.com/mycert/ESPot",
+    "summary_es": "Repositorio sobre observación de ataques a Elasticsearch; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about observation of Elasticsearch attacks; documentation and maintenance require further review.",
+    "year": 2014,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "mycert/ESPot",
+      "archived": false,
+      "last_push": "2014-08-25T07:10:30Z"
+    }
+  },
+  {
+    "id": "gh-honeynet-ghost-usb-honeypot",
+    "slug": "gh-honeynet-ghost-usb-honeypot",
+    "kind": "software",
+    "name": "ghost-usb-honeypot",
+    "organization": "honeynet",
+    "source_url": "https://github.com/honeynet/ghost-usb-honeypot",
+    "summary_es": "Repositorio sobre captura de malware propagado por USB; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about capture of USB-propagated malware; documentation and maintenance require further review.",
+    "year": 2015,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Endpoint"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "honeynet/ghost-usb-honeypot",
+      "license": "GPL-3.0",
+      "archived": false,
+      "last_push": "2015-03-24T14:35:53Z"
+    }
+  },
+  {
+    "id": "gh-fygrave-honeyntp",
+    "slug": "gh-fygrave-honeyntp",
+    "kind": "software",
+    "name": "honeyntp",
+    "organization": "fygrave",
+    "source_url": "https://github.com/fygrave/honeyntp",
+    "summary_es": "Repositorio sobre servicio señuelo NTP; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about decoy NTP service; documentation and maintenance require further review.",
+    "year": 2014,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "fygrave/honeyntp",
+      "archived": false,
+      "last_push": "2014-03-27T07:20:52Z"
+    }
+  },
+  {
+    "id": "gh-owasp-honeypot-project",
+    "slug": "gh-owasp-honeypot-project",
+    "kind": "software",
+    "name": "Honeypot-Project",
+    "organization": "OWASP",
+    "source_url": "https://github.com/OWASP/Honeypot-Project",
+    "summary_es": "Repositorio sobre material de honeypots de OWASP; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about OWASP honeypot material; documentation and maintenance require further review.",
+    "year": 2018,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "OWASP/Honeypot-Project",
+      "archived": false,
+      "last_push": "2026-08-30T11:34:41Z"
+    }
+  },
+  {
+    "id": "gh-mdp-honeypot-go",
+    "slug": "gh-mdp-honeypot-go",
+    "kind": "software",
+    "name": "honeypot.go",
+    "organization": "mdp",
+    "source_url": "https://github.com/mdp/honeypot.go",
+    "summary_es": "Repositorio sobre simulación de SSH en Go; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about SSH simulation in Go; documentation and maintenance require further review.",
+    "year": 2013,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "mdp/honeypot.go",
+      "archived": false,
+      "last_push": "2013-12-20T18:45:20Z"
+    }
+  },
+  {
+    "id": "gh-qeeqbox-honeypots",
+    "slug": "gh-qeeqbox-honeypots",
+    "kind": "software",
+    "name": "honeypots",
+    "organization": "qeeqbox",
+    "source_url": "https://github.com/qeeqbox/honeypots",
+    "summary_es": "Repositorio sobre sensores de múltiples protocolos; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about multi-protocol sensors; documentation and maintenance require further review.",
+    "year": 2021,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "qeeqbox/honeypots",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "last_push": "2025-12-03T18:22:22Z"
+    }
+  },
+  {
+    "id": "gh-blessedrebus-krawl",
+    "slug": "gh-blessedrebus-krawl",
+    "kind": "software",
+    "name": "Krawl",
+    "organization": "BlessedRebuS",
+    "source_url": "https://github.com/BlessedRebuS/Krawl",
+    "summary_es": "Repositorio sobre aplicaciones falsas para desviar atacantes; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about fake applications for attacker diversion; documentation and maintenance require further review.",
+    "year": 2025,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "BlessedRebuS/Krawl",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2026-09-11T14:27:51Z"
+    }
+  },
+  {
+    "id": "gh-binarydefense-log4j-honeypot-flask",
+    "slug": "gh-binarydefense-log4j-honeypot-flask",
+    "kind": "software",
+    "name": "log4j-honeypot-flask",
+    "organization": "BinaryDefense",
+    "source_url": "https://github.com/BinaryDefense/log4j-honeypot-flask",
+    "summary_es": "Repositorio sobre observación de escaneos Log4j; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about observation of Log4j scans; documentation and maintenance require further review.",
+    "year": 2021,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "BinaryDefense/log4j-honeypot-flask",
+      "archived": false,
+      "last_push": "2021-12-20T14:44:27Z"
+    }
+  },
+  {
+    "id": "gh-referefref-modpot",
+    "slug": "gh-referefref-modpot",
+    "kind": "software",
+    "name": "modpot",
+    "organization": "referefref",
+    "source_url": "https://github.com/referefref/modpot",
+    "summary_es": "Repositorio sobre framework modular de honeypots web; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about modular web honeypot framework; documentation and maintenance require further review.",
+    "year": 2024,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "referefref/modpot",
+      "license": "Apache-2.0",
+      "archived": false,
+      "last_push": "2024-05-08T03:19:45Z"
+    }
+  },
+  {
+    "id": "gh-plazmaz-mongodb-honeyproxy",
+    "slug": "gh-plazmaz-mongodb-honeyproxy",
+    "kind": "software",
+    "name": "MongoDB-HoneyProxy",
+    "organization": "Plazmaz",
+    "source_url": "https://github.com/Plazmaz/MongoDB-HoneyProxy",
+    "summary_es": "Repositorio sobre proxy señuelo de MongoDB; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about MongoDB decoy proxy; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "Plazmaz/MongoDB-HoneyProxy",
+      "license": "GPL-3.0",
+      "archived": false,
+      "last_push": "2023-02-20T01:16:32Z"
+    }
+  },
+  {
+    "id": "gh-sjinks-mysql-honeypotd",
+    "slug": "gh-sjinks-mysql-honeypotd",
+    "kind": "software",
+    "name": "mysql-honeypotd",
+    "organization": "sjinks",
+    "source_url": "https://github.com/sjinks/mysql-honeypotd",
+    "summary_es": "Repositorio sobre simulación de MySQL; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about MySQL simulation; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "sjinks/mysql-honeypotd",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2026-09-15T11:46:01Z"
+    }
+  },
+  {
+    "id": "gh-schmalle-mysqlpot",
+    "slug": "gh-schmalle-mysqlpot",
+    "kind": "software",
+    "name": "MysqlPot",
+    "organization": "schmalle",
+    "source_url": "https://github.com/schmalle/MysqlPot",
+    "summary_es": "Repositorio sobre servicio señuelo MySQL; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about decoy MySQL service; documentation and maintenance require further review.",
+    "year": 2012,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "schmalle/MysqlPot",
+      "archived": false,
+      "last_push": "2012-10-14T19:17:10Z"
+    }
+  },
+  {
+    "id": "gh-schmalle-nodepot",
+    "slug": "gh-schmalle-nodepot",
+    "kind": "software",
+    "name": "Nodepot",
+    "organization": "schmalle",
+    "source_url": "https://github.com/schmalle/Nodepot",
+    "summary_es": "Repositorio sobre simulación de aplicaciones Node.js; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Node.js application simulation; documentation and maintenance require further review.",
+    "year": 2014,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "schmalle/Nodepot",
+      "archived": false,
+      "last_push": "2015-08-23T16:29:31Z"
+    }
+  },
+  {
+    "id": "gh-torque59-nosqlpot",
+    "slug": "gh-torque59-nosqlpot",
+    "kind": "software",
+    "name": "nosqlpot",
+    "organization": "torque59",
+    "source_url": "https://github.com/torque59/nosqlpot",
+    "summary_es": "Repositorio sobre simulación de servicios NoSQL; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about NoSQL-service simulation; documentation and maintenance require further review.",
+    "year": 2015,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "torque59/nosqlpot",
+      "license": "GPL-2.0",
+      "archived": false,
+      "last_push": "2023-10-17T07:27:57Z"
+    }
+  },
+  {
+    "id": "gh-joda32-owa-honeypot",
+    "slug": "gh-joda32-owa-honeypot",
+    "kind": "software",
+    "name": "owa-honeypot",
+    "organization": "joda32",
+    "source_url": "https://github.com/joda32/owa-honeypot",
+    "summary_es": "Repositorio sobre simulación de Outlook Web Access; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Outlook Web Access simulation; documentation and maintenance require further review.",
+    "year": 2019,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "joda32/owa-honeypot",
+      "license": "Apache-2.0",
+      "archived": false,
+      "last_push": "2023-05-02T16:39:01Z"
+    }
+  },
+  {
+    "id": "gh-betheroot-pghoney",
+    "slug": "gh-betheroot-pghoney",
+    "kind": "software",
+    "name": "pghoney",
+    "organization": "betheroot",
+    "source_url": "https://github.com/betheroot/pghoney",
+    "summary_es": "Repositorio sobre simulación de PostgreSQL; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about PostgreSQL simulation; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "betheroot/pghoney",
+      "archived": false,
+      "last_push": "2024-05-20T19:13:04Z"
+    }
+  },
+  {
+    "id": "gh-gfoss-phpmyadmin-honeypot",
+    "slug": "gh-gfoss-phpmyadmin-honeypot",
+    "kind": "software",
+    "name": "phpmyadmin_honeypot",
+    "organization": "gfoss",
+    "source_url": "https://github.com/gfoss/phpmyadmin_honeypot",
+    "summary_es": "Repositorio sobre simulación de phpMyAdmin; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about phpMyAdmin simulation; documentation and maintenance require further review.",
+    "year": 2012,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "gfoss/phpmyadmin_honeypot",
+      "license": "GPL-3.0",
+      "archived": false,
+      "last_push": "2018-02-11T16:45:53Z"
+    }
+  },
+  {
+    "id": "gh-owasp-python-honeypot",
+    "slug": "gh-owasp-python-honeypot",
+    "kind": "software",
+    "name": "Python-Honeypot",
+    "organization": "OWASP",
+    "source_url": "https://github.com/OWASP/Python-Honeypot",
+    "summary_es": "Repositorio sobre framework de deception en Python; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Python deception framework; documentation and maintenance require further review.",
+    "year": 2018,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "OWASP/Python-Honeypot",
+      "license": "Apache-2.0",
+      "archived": false,
+      "last_push": "2024-09-15T09:17:13Z"
+    }
+  },
+  {
+    "id": "gh-cypwnpwnsocute-redishoneypot",
+    "slug": "gh-cypwnpwnsocute-redishoneypot",
+    "kind": "software",
+    "name": "RedisHoneyPot",
+    "organization": "cypwnpwnsocute",
+    "source_url": "https://github.com/cypwnpwnsocute/RedisHoneyPot",
+    "summary_es": "Repositorio sobre servicio señuelo Redis; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about decoy Redis service; documentation and maintenance require further review.",
+    "year": 2021,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "cypwnpwnsocute/RedisHoneyPot",
+      "license": "GPL-3.0",
+      "archived": false,
+      "last_push": "2021-04-23T05:57:05Z"
+    }
+  },
+  {
+    "id": "gh-betheroot-sticky-elephant",
+    "slug": "gh-betheroot-sticky-elephant",
+    "kind": "software",
+    "name": "sticky_elephant",
+    "organization": "betheroot",
+    "source_url": "https://github.com/betheroot/sticky_elephant",
+    "summary_es": "Repositorio sobre simulación interactiva de PostgreSQL; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about interactive PostgreSQL simulation; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "betheroot/sticky_elephant",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2024-08-06T17:17:05Z"
+    }
+  },
+  {
+    "id": "gh-cymmetria-strutshoneypot",
+    "slug": "gh-cymmetria-strutshoneypot",
+    "kind": "software",
+    "name": "StrutsHoneypot",
+    "organization": "Cymmetria",
+    "source_url": "https://github.com/Cymmetria/StrutsHoneypot",
+    "summary_es": "Repositorio sobre simulación de Apache Struts; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Apache Struts simulation; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "Cymmetria/StrutsHoneypot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2017-03-24T10:32:17Z"
+    }
+  },
+  {
+    "id": "gh-mushorg-tanner",
+    "slug": "gh-mushorg-tanner",
+    "kind": "software",
+    "name": "tanner",
+    "organization": "mushorg",
+    "source_url": "https://github.com/mushorg/tanner",
+    "summary_es": "Repositorio sobre análisis de eventos web de SNARE; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about SNARE web-event analysis; documentation and maintenance require further review.",
+    "year": 2015,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "mushorg/tanner",
+      "license": "GPL-3.0",
+      "archived": false,
+      "last_push": "2024-08-19T22:54:36Z"
+    }
+  },
+  {
+    "id": "gh-phype-telnet-iot-honeypot",
+    "slug": "gh-phype-telnet-iot-honeypot",
+    "kind": "software",
+    "name": "telnet-iot-honeypot",
+    "organization": "Phype",
+    "source_url": "https://github.com/Phype/telnet-iot-honeypot",
+    "summary_es": "Repositorio sobre captura de binarios de botnets IoT; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about capture of IoT botnet binaries; documentation and maintenance require further review.",
+    "year": 2016,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "IoT"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "Phype/telnet-iot-honeypot",
+      "archived": false,
+      "last_push": "2024-02-02T22:07:12Z"
+    }
+  },
+  {
+    "id": "gh-helospark-tomcat-manager-honeypot",
+    "slug": "gh-helospark-tomcat-manager-honeypot",
+    "kind": "software",
+    "name": "tomcat-manager-honeypot",
+    "organization": "helospark",
+    "source_url": "https://github.com/helospark/tomcat-manager-honeypot",
+    "summary_es": "Repositorio sobre simulación del administrador Tomcat; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Tomcat manager simulation; documentation and maintenance require further review.",
+    "year": 2017,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "helospark/tomcat-manager-honeypot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2017-08-27T09:48:01Z"
+    }
+  },
+  {
+    "id": "gh-cymmetria-weblogic-honeypot",
+    "slug": "gh-cymmetria-weblogic-honeypot",
+    "kind": "software",
+    "name": "weblogic_honeypot",
+    "organization": "Cymmetria",
+    "source_url": "https://github.com/Cymmetria/weblogic_honeypot",
+    "summary_es": "Repositorio sobre simulación de Oracle WebLogic; documentación y mantenimiento requieren revisión adicional.",
+    "summary_en": "Repository about Oracle WebLogic simulation; documentation and maintenance require further review.",
+    "year": 2018,
+    "evidence": "repository-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [],
+      "review_basis": "repository-metadata",
+      "access_date": "2026-09-15",
+      "source_title": "Cymmetria/weblogic_honeypot",
+      "license": "MIT",
+      "archived": false,
+      "last_push": "2020-04-25T20:55:29Z"
+    }
+  }
+]

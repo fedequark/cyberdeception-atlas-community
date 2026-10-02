@@ -1,0 +1,53 @@
+name: Source-backed contribution
+description: Propose a public correction, source, translation, evaluation or reproduction. Never include private material.
+title: "Contribution: "
+labels: [contribution, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: "Public issue: do not include credentials, live decoy locations, personal telemetry, unpublished source text or security findings. Use the site form for a private editorial proposal."
+  - type: dropdown
+    id: type
+    attributes:
+      label: Contribution type
+      options: [Record correction, New record, Paper review, Software update, Translation, Evaluation, Independent reproduction]
+    validations:
+      required: true
+  - type: input
+    id: record
+    attributes:
+      label: Resource or record
+      placeholder: "Name and Atlas URL, if an existing record"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Source locator and access date
+      placeholder: "Section or page; YYYY-MM-DD"
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change and evidence boundary
+      description: "State the exact claim or change, what the source supports, what remains unknown, and any negative results. For an evaluation include environment, version, baseline, controls, attempts and reproducible artifacts."
+    validations:
+      required: true
+  - type: textarea
+    id: interest
+    attributes:
+      label: Relevant interests and AI assistance
+      description: "Disclose relevant author, vendor or project roles and whether AI helped prepare the proposal."
+  - type: dropdown
+    id: credit
+    attributes:
+      label: Public credit preference
+      options: [No public identification, GitHub handle, Discuss later]
+    validations:
+      required: true

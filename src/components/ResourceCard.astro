@@ -1,0 +1,26 @@
+---
+import type { Language, Resource } from '../lib/types';
+import { copy } from '../lib/i18n';
+import { parseData } from '../lib/types';
+import { dossiers } from '../../data/dossiers.mjs';
+const { resource, lang, compare = false } = Astro.props as {resource:Resource;lang:Language;compare?:boolean};
+const t = copy[lang];
+const data = parseData(resource);
+const depth:Record<string,[string,string]>={
+  'source-page':['Página pública','Public page'],
+  'repository-metadata':['Repositorio','Repository'],
+  'publisher-metadata':['Metadatos','Metadata'],
+  'abstract':['Abstract','Abstract'],
+  'full-text':['Texto completo','Full text']
+};
+---
+<article class="resource-card">
+  <div class="card-top"><span class="kind-pill">{t.kinds[resource.kind]}</span><span class="card-year">{resource.year ?? '—'}</span></div>
+  <h3><a href={`/${lang}/resource/${resource.slug}`}>{resource.name}</a></h3>
+  <span class="review-basis">{lang==='es'?'Material revisado':'Material reviewed'}: {depth[data.review_basis]?.[lang==='es'?0:1]??data.review_basis}</span>
+  {data.disclosure_es && <span class="disclosure-label">{lang==='es'?'Aporte del editor':'Editor contribution'}</span>}
+  {dossiers[resource.slug] && <span class="critical-label">{lang==='es'?'Lectura crítica':'Critical reading'}</span>}
+  <p>{lang === 'es' ? resource.summary_es : resource.summary_en}</p>
+  <div class="card-tags">{data.environments.slice(0,2).map(value => <span>{value}</span>)}{data.techniques.slice(0,2).map(value => <span>{value}</span>)}</div>
+  <div class="card-footer"><span>{resource.organization}</span>{compare && <label class="compare-check"><input type="checkbox" name="items" value={resource.slug} />{t.compare}</label>}</div>
+</article>

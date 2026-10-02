@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Private editorial proposal
+    url: https://cyberdeceptionatlas.org/es/contribute
+    about: Use the existing private queue for source-backed proposals without public issue details.

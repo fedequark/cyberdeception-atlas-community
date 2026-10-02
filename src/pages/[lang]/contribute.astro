@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import { copy } from '../../lib/i18n';
+import type { Language } from '../../lib/types';
+
+const lang = Astro.params.lang as Language;
+if (lang !== 'es' && lang !== 'en') return Astro.redirect('/es/', 302);
+const t = copy[lang];
+const proposalTypes = [
+  ['correction', 'Corrección de ficha', 'Record correction'],
+  ['new-record', 'Nueva ficha', 'New record'],
+  ['paper-review', 'Revisión de publicación', 'Paper review'],
+  ['software-update', 'Actualización de herramienta', 'Software update'],
+  ['translation', 'Traducción', 'Translation'],
+  ['evaluation', 'Evaluación', 'Evaluation'],
+  ['reproduction', 'Reproducción', 'Reproduction'],
+] as const;
+---
+
+<Base lang={lang} title={t.contribute}>
+  <header class="article-head">
+    <p class="eyebrow">{t.contribute}</p>
+    <h1>{lang === 'es' ? 'Proponé una contribución' : 'Propose a contribution'}</h1>
+    <p>{t.contributeIntro}</p>
+    <p>{lang === 'es' ? 'La propuesta entra en una cola privada para curación. Su aceptación no publica una ficha automáticamente. No envíes credenciales, ubicaciones reales de señuelos, telemetría personal ni textos de terceros que no puedas compartir.' : 'Your proposal enters a private curation queue. Acceptance does not automatically publish a record. Do not send credentials, real decoy locations, personal telemetry or third-party text you cannot share.'}</p>
+    <p><a href={`/${lang}/methodology`}>{lang === 'es' ? 'Ver criterios editoriales' : 'Read editorial criteria'} →</a></p>
+  </header>
+  <div class="form-narrow panel" style="margin-top:28px">
+    {Astro.url.searchParams.get('sent') === '1' && <p class="status-message" role="status">{t.success}</p>}
+    <form action="/api/submit" method="post">
+      <input type="hidden" name="lang" value={lang} />
+      <div class="field"><label for="proposal_type">{lang === 'es' ? 'Tipo de aporte' : 'Contribution type'}</label><select id="proposal_type" name="proposal_type" required>{proposalTypes.map(([value, es, en]) => <option value={value}>{lang === 'es' ? es : en}</option>)}</select></div>
+      <div class="field"><label for="name">{lang === 'es' ? 'Recurso o trabajo' : 'Resource or work'}</label><input id="name" name="name" required minlength="3" maxlength="120" /></div>
+      <div class="field"><label for="source">{lang === 'es' ? 'URL de la ficha o fuente primaria' : 'Record or primary-source URL'}</label><input id="source" name="url" type="url" required placeholder="https://" maxlength="500" /></div>
+      <div class="field"><label for="kind">{t.type}</label><select id="kind" name="kind"><option value="product">{t.kinds.product}</option><option value="service">{t.kinds.service}</option><option value="paper">{t.kinds.paper}</option><option value="software">{t.kinds.software}</option><option value="case-study">{t.kinds['case-study']}</option><option value="dataset">{t.kinds.dataset}</option><option value="framework">{t.kinds.framework}</option><option value="community">{t.kinds.community}</option></select></div>
+      <div class="field"><label for="source_locator">{lang === 'es' ? 'Página, sección, versión o localizador en la fuente' : 'Page, section, version or source locator'}</label><input id="source_locator" name="source_locator" maxlength="300" /></div>
+      <div class="field"><label for="note">{lang === 'es' ? 'Cambio propuesto, evidencia y límites' : 'Proposed change, evidence and limits'}</label><textarea id="note" name="note" required minlength="20" maxlength="2000"></textarea></div>
+      <div class="field"><label for="interest">{lang === 'es' ? 'Afiliación o interés pertinente, si corresponde' : 'Relevant affiliation or interest, if any'}</label><textarea id="interest" name="interest" maxlength="500"></textarea></div>
+      <div class="field"><label for="credit_choice">{lang === 'es' ? 'Crédito público deseado si se publica el aporte' : 'Preferred public credit if the contribution is published'}</label><select id="credit_choice" name="credit_choice"><option value="anonymous">{lang === 'es' ? 'Sin identificación pública' : 'No public identification'}</option><option value="name">{lang === 'es' ? 'Nombre' : 'Name'}</option><option value="pseudonym">{lang === 'es' ? 'Seudónimo' : 'Pseudonym'}</option></select></div>
+      <div class="field"><label for="credit_name">{lang === 'es' ? 'Nombre o seudónimo elegido, si corresponde' : 'Chosen name or pseudonym, if applicable'}</label><input id="credit_name" name="credit_name" maxlength="120" /></div>
+      <div class="field"><label><input type="checkbox" name="ai_assisted" /> {lang === 'es' ? 'Usé asistencia de IA para preparar esta propuesta' : 'I used AI assistance to prepare this proposal'}</label></div>
+      <div class="sr-only" aria-hidden="true"><label for="site">Site</label><input id="site" name="site" tabindex="-1" autocomplete="off" /></div>
+      <button class="button" type="submit">{t.submit}</button>
+    </form>
+  </div>
+</Base>

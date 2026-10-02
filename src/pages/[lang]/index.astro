@@ -1,0 +1,15 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import ReferenceHome from '../../components/ReferenceHome.astro';
+import { catalogCounts } from '../../lib/catalog';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+// Preserve old catalog and saved-search URLs.
+if(['q','kind','environment','technique','page'].some(key=>Astro.url.searchParams.has(key)))return Astro.redirect(`/${lang}/library${Astro.url.search}`,302);
+const counts=await catalogCounts(env.DB);
+---
+<Base lang={lang} title={lang==='es'?'Del señuelo a una decisión medible':'From decoys to measurable decisions'} description={lang==='es'?'Explorá opciones de cyberdeception para un problema de detección, revisá sus fuentes y prepará una prueba con señales y medidas definidas.':'Explore cyber deception options for a detection problem, check their sources and plan a test with defined signals and measures.'}>
+  <ReferenceHome lang={lang} counts={counts}/>
+</Base>

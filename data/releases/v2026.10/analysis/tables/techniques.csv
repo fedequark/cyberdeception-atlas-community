@@ -1,0 +1,6 @@
+value,count,share_of_records
+Honeypot,120,0.6316
+Decoy,56,0.2947
+Honeytoken,26,0.1368
+Adversary engagement,16,0.0842
+Moving target defense,5,0.0263

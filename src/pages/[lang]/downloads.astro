@@ -1,0 +1,149 @@
+---
+import Base from '../../layouts/Base.astro';
+import type { Language } from '../../lib/types';
+export const prerender = true;
+export function getStaticPaths() {
+  return ['es', 'en'].map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Language;
+if (lang !== 'es' && lang !== 'en') return Astro.redirect('/es/', 302);
+---
+
+<Base lang={lang} title={lang === 'es' ? 'Descargas' : 'Downloads'}>
+  <header class="article-head">
+    <p class="eyebrow">
+      {lang === 'es' ? 'Datos abiertos · Versión 2026.10' : 'Open data · Version 2026.10'}
+    </p>
+    <h1>{lang === 'es' ? 'Descargas y cita' : 'Downloads and citation'}</h1>
+    <p>
+      {lang === 'es'
+        ? 'Exportá las fichas públicas y la bibliografía. Los envíos y cambios editoriales privados no se incluyen.'
+        : 'Export public catalog records and bibliography. Private submissions and editorial changes are excluded.'}
+    </p>
+  </header>
+  <div class="doc-list">
+    <a href="/downloads/research/v2026.10/cyberdeception-atlas-v2026.10.tar.gz">
+      <strong>{lang === 'es' ? 'Paquete reproducible' : 'Reproducibility package'}</strong>
+      <span>
+        {lang === 'es'
+          ? 'Corpus, protocolo, codebook, análisis, piloto y manifests'
+          : 'Corpus, protocol, codebook, analysis, pilot and manifests'}
+      </span>
+    </a>
+    <a href="/downloads/research/v2026.10/cyberdeception-atlas-v2026.10.tar.gz.sha256">
+      <strong>SHA-256</strong>
+      <span>
+        {lang === 'es' ? 'Checksum independiente del paquete' : 'Independent package checksum'}
+      </span>
+    </a>
+    <a href="/downloads/research/v2026.10/codebook.md">
+      <strong>Codebook</strong>
+      <span>
+        {lang === 'es'
+          ? 'Variables, reglas de inferencia y límites'
+          : 'Variables, inference rules and boundaries'}
+      </span>
+    </a>
+    <a href="/downloads/research/v2026.10/analysis-report.md">
+      <strong>{lang === 'es' ? 'Análisis del corpus' : 'Corpus analysis'}</strong>
+      <span>
+        {lang === 'es'
+          ? 'Resultados descriptivos y sensibilidad'
+          : 'Descriptive results and sensitivity views'}
+      </span>
+    </a>
+    <a href="/downloads/research/v2026.10/pilot-observations.csv">
+      <strong>{lang === 'es' ? 'Observaciones del piloto' : 'Pilot observations'}</strong>
+      <span>160 CSV observations</span>
+    </a>
+    <a href="/api/export?format=json">
+      <strong>JSON</strong>
+      <span>
+        {lang === 'es'
+          ? 'Fichas públicas con fuente, evidencia y licencia'
+          : 'Public records with source, evidence and license'}
+      </span>
+    </a>
+    <a href="/api/export?format=csv">
+      <strong>CSV</strong>
+      <span>
+        {lang === 'es' ? 'Para análisis en hojas de cálculo' : 'For spreadsheet analysis'}
+      </span>
+    </a>
+    <a href="/api/export?format=bibtex">
+      <strong>BibTeX</strong>
+      <span>{lang === 'es' ? 'Referencias bibliográficas de papers' : 'Paper bibliography'}</span>
+    </a>
+    <a href="/downloads/cyberdeception-research-es.pdf">
+      <strong>PDF · Español</strong>
+      <span>
+        {lang === 'es'
+          ? 'Informe inicial sobre el estado del campo'
+          : 'Initial state-of-field report'}
+      </span>
+    </a>
+  </div>
+  <section id="preprint" class="article-body panel" style="margin-top:28px">
+    <h2>{lang === 'es' ? 'Preprint del proyecto' : 'Project preprint'}</h2>
+    <p>
+      Federico Pacheco {lang === 'es' ? 'y' : 'and'} Diego Staino,{' '}
+      <em>
+        {lang === 'es'
+          ? 'Cyberdeception Atlas: mapa de evidencia y marco de reporte basados en fuentes'
+          : 'Cyberdeception Atlas: A Source-Bounded Evidence Map and Reporting Framework'}
+      </em>
+      , v2026.09.2 (2026).
+    </p>
+    <p>
+      {lang === 'es'
+        ? 'Manuscrito candidato a preprint: no fue enviado ni revisado por pares. Describe el corpus, el análisis de sensibilidad, la prueba de conformidad y dos pilotos de extracción con cuatro modelos. Los pilotos no estiman exactitud ni ahorro de tiempo; los registros de adjudicación permanecen privados.'
+        : 'Preprint candidate: not submitted or peer reviewed. It describes the corpus, sensitivity analysis, conformance test, and two four-model extraction pilots. The pilots do not estimate accuracy or time savings; adjudication records remain private.'}
+    </p>
+    <div class="doc-list">
+      <a
+        href={`/downloads/research/preprint-v2026.09.2/cyberdeception-atlas-preprint-v2026.09.2.${lang}.pdf`}
+      >
+        <strong>PDF · {lang === 'es' ? 'Español' : 'English'}</strong>
+        <span>
+          {lang === 'es' ? 'Versión para lectura y difusión' : 'Reading and sharing version'}
+        </span>
+      </a>
+      <a
+        href={`/downloads/research/preprint-v2026.09.2/cyberdeception-atlas-preprint-v2026.09.2.${lang}.docx`}
+      >
+        <strong>Word · {lang === 'es' ? 'Español' : 'English'}</strong>
+        <span>{lang === 'es' ? 'Manuscrito editable' : 'Editable manuscript'}</span>
+      </a>
+      <a
+        href={`/downloads/research/preprint-v2026.09.2/cyberdeception-atlas-preprint-v2026.09.2.${lang}.md`}
+      >
+        <strong>Markdown · {lang === 'es' ? 'Español' : 'English'}</strong>
+        <span>{lang === 'es' ? 'Fuente textual' : 'Text source'}</span>
+      </a>
+    </div>
+    <p>
+      {lang === 'es' ? 'También está disponible en' : 'Also available in'}{' '}
+      <a href={`/${lang === 'es' ? 'en' : 'es'}/downloads/#preprint`}>
+        {lang === 'es' ? 'inglés' : 'Spanish'}
+      </a>
+      . {lang === 'es' ? 'Aún no tiene DOI.' : 'No DOI has been assigned yet.'}
+    </p>
+  </section>
+  <section class="article-body panel" style="margin-top:28px">
+    <h2>{lang === 'es' ? 'Cómo citar el corpus' : 'How to cite the corpus'}</h2>
+    <p>
+      Federico Pacheco, <em>Cyberdeception Atlas: dataset and reproducibility package</em>, version
+      v2026.10, 2026. <a href="https://cyberdeceptionatlas.org">cyberdeceptionatlas.org</a>.
+    </p>
+    <p>
+      {lang === 'es'
+        ? 'Los datos y documentos originales del Atlas se publican bajo CC BY 4.0; el software, bajo MIT. Las fuentes enlazadas conservan sus propios derechos. Todavía no se asignó un DOI.'
+        : 'Original Atlas data and documents are released under CC BY 4.0; software is under MIT. Linked sources retain their own rights. A DOI has not yet been assigned.'}
+    </p>
+  </section>
+  <p class="note">
+    {lang === 'es'
+      ? 'La cobertura es inicial y crece mediante revisión editorial. Metadatos de publicaciones no equivalen a lectura completa.'
+      : 'Coverage is initial and grows through editorial review. Publication metadata is not equivalent to a full-text review.'}
+  </p>
+</Base>

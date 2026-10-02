@@ -1,0 +1,23 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../layouts/Base.astro';
+import { copy } from '../../lib/i18n';
+import { parseData, type Language, type Resource } from '../../lib/types';
+const lang = Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en') return Astro.redirect('/es/',302);
+const t=copy[lang];
+const slugs=[...new Set(Astro.url.searchParams.getAll('items').filter(value=>/^[a-z0-9-]{1,80}$/.test(value)))].slice(0,4);
+const resources:Resource[]=slugs.length?(await env.DB.prepare(`SELECT * FROM resources WHERE slug IN (${slugs.map(()=>'?').join(',')}) AND status='published'`).bind(...slugs).all<Resource>()).results:[];
+const fields=[
+  {label:t.type,render:(r:Resource)=>t.kinds[r.kind]},
+  {label:lang==='es'?'Responsable':'Organization',render:(r:Resource)=>r.organization},
+  {label:lang==='es'?'Técnicas':'Techniques',render:(r:Resource)=>parseData(r).techniques.join(', ')||'—'},
+  {label:lang==='es'?'Entornos':'Environments',render:(r:Resource)=>parseData(r).environments.join(', ')||'—'},
+  {label:t.evidence,render:(r:Resource)=>parseData(r).review_basis},
+  {label:t.reviewed,render:(r:Resource)=>r.reviewed_at},
+];
+---
+<Base lang={lang} title={t.compare}><header class="article-head"><p class="eyebrow">{t.explore}</p><h1>{t.compare}</h1><p>{lang==='es'?'Datos documentados de hasta cuatro recursos. Cada ficha enlaza a la fuente original.':'Documented data for up to four resources. Each record links to its original source.'}</p></header>
+  {resources.length<2?<div class="empty"><p>{lang==='es'?'Seleccioná al menos dos productos o herramientas en el catálogo.':'Select at least two products or tools in the catalog.'}</p><a href={`/${lang}/library`}>{lang==="es"?"Biblioteca":"Library"}</a></div>:<div class="table-scroll" style="margin-top:28px"><table class="resource-table"><thead><tr><th>{lang==='es'?'Dato':'Field'}</th>{resources.map(r=><th><a href={`/${lang}/resource/${r.slug}`}>{r.name}</a></th>)}</tr></thead><tbody>{fields.map(field=><tr><th scope="row">{field.label}</th>{resources.map(r=><td>{field.render(r)}</td>)}</tr>)}<tr><th scope="row">{t.source}</th>{resources.map(r=><td><a class="source-link" href={r.source_url} target="_blank" rel="noopener noreferrer">{lang==='es'?'Fuente original':'Original source'}</a></td>)}</tr></tbody></table></div>}
+  <p class="note" style="margin-top:20px">{t.methodNote}</p>
+</Base>

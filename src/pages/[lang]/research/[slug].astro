@@ -1,0 +1,18 @@
+---
+import { marked } from 'marked';
+import Base from '../../../layouts/Base.astro';
+import { documents } from '../../../lib/documents';
+import { getDocument } from '../../../lib/document-source';
+import type { Language } from '../../../lib/types';
+export const prerender = true;
+export function getStaticPaths() {
+  return (['es','en'] as const).flatMap(lang=>documents.map(document=>({params:{lang,slug:document.slug}})));
+}
+const lang=Astro.params.lang as Language;if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+const slug=Astro.params.slug??'';
+const doc=documents.find(item=>item.slug===slug);
+const markdown=doc?getDocument(slug,lang):null;
+if(!doc||!markdown)return new Response(lang==='es'?'Documento no encontrado':'Document not found',{status:404});
+const html=marked.parse(markdown) as string;
+---
+<Base lang={lang} title={doc[lang]} description={lang==='es'?doc.esDescription:doc.enDescription}><header class="article-head"><p class="breadcrumb"><a href={`/${lang}/${doc.category==='guide'?'practice':'evidence'}`}>{doc.category==='guide'?(lang==='es'?'Planificar':'Plan a test'):(lang==='es'?'Evidencia':'Evidence')}</a> / {doc.category==='guide'?(lang==='es'?'Guía':'Guide'):(lang==='es'?'Investigación':'Research')}</p><p class="eyebrow">{lang==='es'?'Revisión 2026':'2026 review'}</p><h1>{doc[lang]}</h1><p>{lang==='es'?doc.esDescription:doc.enDescription}</p></header><div class="doc-actions"><a class="button secondary" href={`/api/document/${lang}/${slug}.md`}>{lang==='es'?'Descargar Markdown':'Download Markdown'}</a>{lang==='es'&&slug==='state'&&<a class="button secondary" href="/downloads/cyberdeception-research-es.pdf">Descargar PDF</a>}<a class="button secondary" href={`/api/export?format=bibtex`}>{lang==='es'?'Bibliografía BibTeX':'BibTeX bibliography'}</a></div><article class="prose" set:html={html}/></Base>

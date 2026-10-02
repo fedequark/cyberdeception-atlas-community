@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import type { Language } from '../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+---
+<Base lang={lang} title={lang==='es'?'Consultar fuentes':'Ask the sources'}>
+  <header class="article-head">
+    <p class="eyebrow">{lang==='es'?'Consulta con fuentes':'Source-grounded search'}</p>
+    <h1>{lang==='es'?'Preguntá al catálogo':'Ask the catalog'}</h1>
+    <p>{lang==='es'?'La respuesta se apoya en fichas públicas y muestra las fuentes utilizadas. Cuando no hay cuota gratuita disponible, el catálogo sigue accesible.':'Answers use published catalog records and show the supporting sources. The catalog remains available when the free allowance runs out.'}</p>
+  </header>
+  <form id="ask-form" class="assistant-form">
+    <label for="question">{lang==='es'?'Tu pregunta':'Your question'}</label>
+    <textarea id="question" name="question" required minlength="8" maxlength="300" placeholder={lang==='es'?'¿Qué herramientas abiertas se usan para honeypots en OT?':'Which open tools are used for OT honeypots?'}></textarea>
+    <button class="button" type="submit">{lang==='es'?'Consultar':'Ask'}</button>
+  </form>
+  <div id="ask-result" class="assistant-result" aria-live="polite"></div>
+  <script>
+    const form=document.getElementById('ask-form');
+    const output=document.getElementById('ask-result');
+    const lang=document.documentElement.lang==='en'?'en':'es';
+    form?.addEventListener('submit',async event=>{
+      event.preventDefault();
+      if(!output)return;
+      const question=(document.getElementById('question') as HTMLTextAreaElement).value;
+      output.textContent=lang==='es'?'Buscando fuentes…':'Searching sources…';
+      try {
+        const response=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,lang})});
+        if(!response.ok)throw Error('Request failed');
+        const result=await response.json() as {answer:string;sources:Array<{name:string;url:string;evidence:string}>};
+        output.replaceChildren();
+        const answer=document.createElement('p');answer.textContent=result.answer;output.appendChild(answer);
+        const list=document.createElement('ol');
+        for(const source of result.sources){
+          const item=document.createElement('li');const link=document.createElement('a');
+          link.href=source.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=source.name;
+          item.appendChild(link);item.appendChild(document.createTextNode(` — ${source.evidence}`));list.appendChild(item);
+        }
+        output.appendChild(list);
+      } catch { output.textContent=lang==='es'?'No se pudo completar la consulta. Podés buscar en el catálogo.':'The query could not be completed. Search the catalog instead.'; }
+    });
+  </script>
+</Base>

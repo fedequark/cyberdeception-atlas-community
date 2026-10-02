@@ -1,0 +1,930 @@
+[
+  {
+    "id": "doi-10-1109-cogmi48466-2019-00023",
+    "slug": "doi-10-1109-cogmi48466-2019-00023",
+    "kind": "paper",
+    "name": "Creating Cyber Deception Games",
+    "organization": "Maxine Major, Sunny Fugate",
+    "source_url": "https://doi.org/10.1109/cogmi48466.2019.00023",
+    "summary_es": "Registro bibliográfico sobre juegos de cyberdeception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on cyber deception games. The abstract and findings still require review.",
+    "year": 2019,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Adversary engagement"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/cogmi48466.2019.00023",
+      "journal": "2019 IEEE First International Conference on Cognitive Machine Intelligence (CogMI)",
+      "authors": [
+        "Maxine Major",
+        "Sunny Fugate",
+        "Justin Mauger",
+        "Kimberly Ferguson-Walter"
+      ],
+      "source_title": "Creating Cyber Deception Games"
+    }
+  },
+  {
+    "id": "doi-10-1109-csnet59123-2023-10339776",
+    "slug": "doi-10-1109-csnet59123-2023-10339776",
+    "kind": "paper",
+    "name": "Mirage: Cyber Deception against Autonomous Cyber Attacks",
+    "organization": "Michael Kouremetis, Ron Alford",
+    "source_url": "https://doi.org/10.1109/csnet59123.2023.10339776",
+    "summary_es": "Registro bibliográfico sobre engaño frente a ataques autónomos. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on deception against autonomous attacks. The abstract and findings still require review.",
+    "year": 2023,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/csnet59123.2023.10339776",
+      "journal": "2023 7th Cyber Security in Networking Conference (CSNet)",
+      "authors": [
+        "Michael Kouremetis",
+        "Ron Alford",
+        "Dean Lawrence"
+      ],
+      "source_title": "Mirage: Cyber Deception against Autonomous Cyber Attacks"
+    }
+  },
+  {
+    "id": "doi-10-1109-globecom42002-2020-9348122",
+    "slug": "doi-10-1109-globecom42002-2020-9348122",
+    "kind": "paper",
+    "name": "Software Diversity for Cyber Deception",
+    "organization": "Aliou Badra Sarr, Ahmed H. Anwar",
+    "source_url": "https://doi.org/10.1109/globecom42002.2020.9348122",
+    "summary_es": "Registro bibliográfico sobre diversidad de software como señuelo. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on software diversity for deception. The abstract and findings still require review.",
+    "year": 2020,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Moving target defense"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/globecom42002.2020.9348122",
+      "journal": "GLOBECOM 2020 - 2020 IEEE Global Communications Conference",
+      "authors": [
+        "Aliou Badra Sarr",
+        "Ahmed H. Anwar",
+        "Charles Kamhoua",
+        "Nandi Leslie",
+        "Jaime Acosta"
+      ],
+      "source_title": "Software Diversity for Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-ccst-2017-8167793",
+    "slug": "doi-10-1109-ccst-2017-8167793",
+    "kind": "paper",
+    "name": "Technologies to enable cyber deception",
+    "organization": "Vincent E. Urias, William M.S. Stout",
+    "source_url": "https://doi.org/10.1109/ccst.2017.8167793",
+    "summary_es": "Registro bibliográfico sobre tecnologías habilitadoras de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on technologies enabling deception. The abstract and findings still require review.",
+    "year": 2017,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/ccst.2017.8167793",
+      "journal": "2017 International Carnahan Conference on Security Technology (ICCST)",
+      "authors": [
+        "Vincent E. Urias",
+        "William M.S. Stout",
+        "Jean Luc-Watson",
+        "Cole Grim",
+        "Lorie Liebrock",
+        "Monzy Merza"
+      ],
+      "source_title": "Technologies to enable cyber deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-vlhcc-2018-8506515",
+    "slug": "doi-10-1109-vlhcc-2018-8506515",
+    "kind": "paper",
+    "name": "Visual Modeling of Cyber Deception",
+    "organization": "Cristiano De Faveri, Ana Moreira",
+    "source_url": "https://doi.org/10.1109/vlhcc.2018.8506515",
+    "summary_es": "Registro bibliográfico sobre modelado visual de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on visual modeling of deception. The abstract and findings still require review.",
+    "year": 2018,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/vlhcc.2018.8506515",
+      "journal": "2018 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)",
+      "authors": [
+        "Cristiano De Faveri",
+        "Ana Moreira"
+      ],
+      "source_title": "Visual Modeling of Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1145-3314058-3314067",
+    "slug": "doi-10-1145-3314058-3314067",
+    "kind": "paper",
+    "name": "Game theory for cyber deception",
+    "organization": "Quanyan Zhu",
+    "source_url": "https://doi.org/10.1145/3314058.3314067",
+    "summary_es": "Registro bibliográfico sobre teoría de juegos aplicada a deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on game theory applied to deception. The abstract and findings still require review.",
+    "year": 2019,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Adversary engagement"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1145/3314058.3314067",
+      "journal": "Proceedings of the 6th Annual Symposium on Hot Topics in the Science of Security",
+      "authors": [
+        "Quanyan Zhu"
+      ],
+      "source_title": "Game theory for cyber deception"
+    }
+  },
+  {
+    "id": "doi-10-24251-hicss-2021-240",
+    "slug": "doi-10-24251-hicss-2021-240",
+    "kind": "paper",
+    "name": "Design Thinking for Cyber Deception",
+    "organization": "Debi Ashenden, Rob Black",
+    "source_url": "https://doi.org/10.24251/hicss.2021.240",
+    "summary_es": "Registro bibliográfico sobre design thinking para cyberdeception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on design thinking for cyber deception. The abstract and findings still require review.",
+    "year": 2021,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.24251/hicss.2021.240",
+      "journal": "Proceedings of the Annual Hawaii International Conference on System Sciences",
+      "authors": [
+        "Debi Ashenden",
+        "Rob Black",
+        "Iain Reid",
+        "Simon Henderson"
+      ],
+      "source_title": "Design Thinking for Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-24251-hicss-2020-232",
+    "slug": "doi-10-24251-hicss-2020-232",
+    "kind": "paper",
+    "name": "Adaptive Cyber Deception: Cognitively Informed Signaling for Cyber Defense",
+    "organization": "Edward Cranford, Cleotilde Gonzalez",
+    "source_url": "https://doi.org/10.24251/hicss.2020.232",
+    "summary_es": "Registro bibliográfico sobre señales adaptativas para defensa. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on adaptive signaling for cyber defense. The abstract and findings still require review.",
+    "year": 2020,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.24251/hicss.2020.232",
+      "journal": "Proceedings of the Annual Hawaii International Conference on System Sciences",
+      "authors": [
+        "Edward Cranford",
+        "Cleotilde Gonzalez",
+        "Palvi Aggarwal",
+        "Sarah Cooney",
+        "Milind Tambe",
+        "Christian Lebiere"
+      ],
+      "source_title": "Adaptive Cyber Deception: Cognitively Informed Signaling for Cyber Defense"
+    }
+  },
+  {
+    "id": "doi-10-1145-3474370-3485656",
+    "slug": "doi-10-1145-3474370-3485656",
+    "kind": "paper",
+    "name": "Game Theoretic Models for Cyber Deception",
+    "organization": "Fei Fang",
+    "source_url": "https://doi.org/10.1145/3474370.3485656",
+    "summary_es": "Registro bibliográfico sobre modelos de teoría de juegos para deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on game-theoretic deception models. The abstract and findings still require review.",
+    "year": 2021,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Adversary engagement"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1145/3474370.3485656",
+      "journal": "Proceedings of the 8th ACM Workshop on Moving Target Defense",
+      "authors": [
+        "Fei Fang"
+      ],
+      "source_title": "Game Theoretic Models for Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-ojcs-2026-3669021",
+    "slug": "doi-10-1109-ojcs-2026-3669021",
+    "kind": "paper",
+    "name": "Toward Realistic and Efficient Cyber Deception",
+    "organization": "Hind Alrubaish, Walid Aljoby",
+    "source_url": "https://doi.org/10.1109/ojcs.2026.3669021",
+    "summary_es": "Registro bibliográfico sobre realismo y eficiencia de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on realism and efficiency of deception. The abstract and findings still require review.",
+    "year": 2026,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/ojcs.2026.3669021",
+      "journal": "IEEE Open Journal of the Computer Society",
+      "authors": [
+        "Hind Alrubaish",
+        "Walid Aljoby",
+        "Ahmed Aldeek",
+        "Mohammed Alkubaish",
+        "Daisuke Mashima"
+      ],
+      "source_title": "Toward Realistic and Efficient Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-milcom-2016-7795427",
+    "slug": "doi-10-1109-milcom-2016-7795427",
+    "kind": "paper",
+    "name": "ACyDS: An adaptive cyber deception system",
+    "organization": "Cho-Yu J. Chiang, Yitzchak M. Gottlieb",
+    "source_url": "https://doi.org/10.1109/milcom.2016.7795427",
+    "summary_es": "Registro bibliográfico sobre un sistema adaptativo de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on an adaptive deception system. The abstract and findings still require review.",
+    "year": 2016,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/milcom.2016.7795427",
+      "journal": "MILCOM 2016 - 2016 IEEE Military Communications Conference",
+      "authors": [
+        "Cho-Yu J. Chiang",
+        "Yitzchak M. Gottlieb",
+        "Shridatt James Sugrim",
+        "Ritu Chadha",
+        "Constantin Serban",
+        "Alex Poylisher",
+        "Lisa M. Marvel",
+        "Jonathan Santos"
+      ],
+      "source_title": "ACyDS: An adaptive cyber deception system"
+    }
+  },
+  {
+    "id": "doi-10-1109-tifs-2017-2710945",
+    "slug": "doi-10-1109-tifs-2017-2710945",
+    "kind": "paper",
+    "name": "A Probabilistic Logic of Cyber Deception",
+    "organization": "Sushil Jajodia, Noseong Park",
+    "source_url": "https://doi.org/10.1109/tifs.2017.2710945",
+    "summary_es": "Registro bibliográfico sobre lógica probabilística de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on probabilistic logic of deception. The abstract and findings still require review.",
+    "year": 2017,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/tifs.2017.2710945",
+      "journal": "IEEE Transactions on Information Forensics and Security",
+      "authors": [
+        "Sushil Jajodia",
+        "Noseong Park",
+        "Fabio Pierazzi",
+        "Andrea Pugliese",
+        "Edoardo Serra",
+        "Gerardo I. Simari",
+        "V. S. Subrahmanian"
+      ],
+      "source_title": "A Probabilistic Logic of Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-secdev45635-2020-00023",
+    "slug": "doi-10-1109-secdev45635-2020-00023",
+    "kind": "paper",
+    "name": "Active Deception Framework: An Extensible Development Environment for Adaptive Cyber Deception",
+    "organization": "Md Mazharul Islam, Ehab Al-Shaer",
+    "source_url": "https://doi.org/10.1109/secdev45635.2020.00023",
+    "summary_es": "Registro bibliográfico sobre un framework adaptable de deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on an adaptive deception framework. The abstract and findings still require review.",
+    "year": 2020,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/secdev45635.2020.00023",
+      "journal": "2020 IEEE Secure Development (SecDev)",
+      "authors": [
+        "Md Mazharul Islam",
+        "Ehab Al-Shaer"
+      ],
+      "source_title": "Active Deception Framework: An Extensible Development Environment for Adaptive Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-1016-j-cose-2023-103268",
+    "slug": "doi-10-1016-j-cose-2023-103268",
+    "kind": "paper",
+    "name": "Cyber expert feedback: Experiences, expectations, and opinions about cyber deception",
+    "organization": "Kimberly J. Ferguson-Walter, Maxine M. Major",
+    "source_url": "https://doi.org/10.1016/j.cose.2023.103268",
+    "summary_es": "Registro bibliográfico sobre experiencias y opiniones de expertos. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on expert experiences and opinions. The abstract and findings still require review.",
+    "year": 2023,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Adversary engagement"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1016/j.cose.2023.103268",
+      "journal": "Computers &amp; Security",
+      "authors": [
+        "Kimberly J. Ferguson-Walter",
+        "Maxine M. Major",
+        "Chelsea K. Johnson",
+        "Craig J. Johnson",
+        "Dakota D. Scott",
+        "Robert S. Gutzwiller",
+        "Temmie Shade"
+      ],
+      "source_title": "Cyber expert feedback: Experiences, expectations, and opinions about cyber deception"
+    }
+  },
+  {
+    "id": "doi-10-1109-msp-2018-1870866",
+    "slug": "doi-10-1109-msp-2018-1870866",
+    "kind": "paper",
+    "name": "Cyber Deception: Overview and the Road Ahead",
+    "organization": "Cliff Wang, Zhuo Lu",
+    "source_url": "https://doi.org/10.1109/msp.2018.1870866",
+    "summary_es": "Registro bibliográfico sobre panorama y desafíos de cyberdeception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on cyber deception overview and challenges. The abstract and findings still require review.",
+    "year": 2018,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/msp.2018.1870866",
+      "journal": "IEEE Security &amp; Privacy",
+      "authors": [
+        "Cliff Wang",
+        "Zhuo Lu"
+      ],
+      "source_title": "Cyber Deception: Overview and the Road Ahead"
+    }
+  },
+  {
+    "id": "doi-10-24251-hicss-2021-244",
+    "slug": "doi-10-24251-hicss-2021-244",
+    "kind": "paper",
+    "name": "Towards Self-Adaptive Cyber Deception for Defense",
+    "organization": "Jason Landsborough, Luke Carpenter",
+    "source_url": "https://doi.org/10.24251/hicss.2021.244",
+    "summary_es": "Registro bibliográfico sobre deception autoadaptativo. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on self-adaptive deception. The abstract and findings still require review.",
+    "year": 2021,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.24251/hicss.2021.244",
+      "journal": "Proceedings of the Annual Hawaii International Conference on System Sciences",
+      "authors": [
+        "Jason Landsborough",
+        "Luke Carpenter",
+        "Braulio Coronado",
+        "Sunny Fugate",
+        "Kimberly Ferguson-Walter",
+        "Dirk Van Bruggen"
+      ],
+      "source_title": "Towards Self-Adaptive Cyber Deception for Defense"
+    }
+  },
+  {
+    "id": "doi-10-1109-eurospw61312-2024-00053",
+    "slug": "doi-10-1109-eurospw61312-2024-00053",
+    "kind": "paper",
+    "name": "Application Layer Cyber Deception Without Developer Interaction",
+    "organization": "Mario Kahlhofer, Stefan Rass",
+    "source_url": "https://doi.org/10.1109/eurospw61312.2024.00053",
+    "summary_es": "Registro bibliográfico sobre deception en capa de aplicación. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on application-layer deception. The abstract and findings still require review.",
+    "year": 2024,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/eurospw61312.2024.00053",
+      "journal": "2024 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;amp;PW)",
+      "authors": [
+        "Mario Kahlhofer",
+        "Stefan Rass"
+      ],
+      "source_title": "Application Layer Cyber Deception Without Developer Interaction"
+    }
+  },
+  {
+    "id": "doi-10-1109-dsc-2018-00040",
+    "slug": "doi-10-1109-dsc-2018-00040",
+    "kind": "paper",
+    "name": "RansomTracer: Exploiting Cyber Deception for Ransomware Tracing",
+    "organization": "ZiHan Wang, Xu Wu",
+    "source_url": "https://doi.org/10.1109/dsc.2018.00040",
+    "summary_es": "Registro bibliográfico sobre trazabilidad de ransomware con deception. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on ransomware tracing through deception. The abstract and findings still require review.",
+    "year": 2018,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Endpoint"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/dsc.2018.00040",
+      "journal": "2018 IEEE Third International Conference on Data Science in Cyberspace (DSC)",
+      "authors": [
+        "ZiHan Wang",
+        "Xu Wu",
+        "ChaoGe Liu",
+        "QiXu Liu",
+        "JiaLai Zhang"
+      ],
+      "source_title": "RansomTracer: Exploiting Cyber Deception for Ransomware Tracing"
+    }
+  },
+  {
+    "id": "doi-10-18653-v1-2022-findings-emnlp-486",
+    "slug": "doi-10-18653-v1-2022-findings-emnlp-486",
+    "kind": "paper",
+    "name": "Controllable Fake Document Infilling for Cyber Deception",
+    "organization": "Yibo Hu, Yu Lin",
+    "source_url": "https://doi.org/10.18653/v1/2022.findings-emnlp.486",
+    "summary_es": "Registro bibliográfico sobre documentos falsos controlables. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on controllable fake documents. The abstract and findings still require review.",
+    "year": 2022,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeytoken"
+      ],
+      "environments": [
+        "Identity"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.18653/v1/2022.findings-emnlp.486",
+      "journal": "Findings of the Association for Computational Linguistics: EMNLP 2022",
+      "authors": [
+        "Yibo Hu",
+        "Yu Lin",
+        "Erick Skorupa Parolin",
+        "Latifur Khan",
+        "Kevin Hamlen"
+      ],
+      "source_title": "Controllable Fake Document Infilling for Cyber Deception"
+    }
+  },
+  {
+    "id": "doi-10-24251-hicss-2020-233",
+    "slug": "doi-10-24251-hicss-2020-233",
+    "kind": "paper",
+    "name": "HoneyBug: Personalized Cyber Deception for Web Applications",
+    "organization": "Amirreza Niakanlahiji, Jafar Haadi Jafarian",
+    "source_url": "https://doi.org/10.24251/hicss.2020.233",
+    "summary_es": "Registro bibliográfico sobre deception personalizado en aplicaciones web. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on personalized web-application deception. The abstract and findings still require review.",
+    "year": 2020,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Decoy"
+      ],
+      "environments": [
+        "Application"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.24251/hicss.2020.233",
+      "journal": "Proceedings of the Annual Hawaii International Conference on System Sciences",
+      "authors": [
+        "Amirreza Niakanlahiji",
+        "Jafar Haadi Jafarian",
+        "Bei-Tseng Chu",
+        "Ehab Al-Shaer"
+      ],
+      "source_title": "HoneyBug: Personalized Cyber Deception for Web Applications"
+    }
+  },
+  {
+    "id": "doi-10-1109-wsc57314-2022-10015347",
+    "slug": "doi-10-1109-wsc57314-2022-10015347",
+    "kind": "paper",
+    "name": "Cyber Deception Metrics For Interconnected Complex Systems",
+    "organization": "Md Ali Reza Al Amin, Sachin Shetty",
+    "source_url": "https://doi.org/10.1109/wsc57314.2022.10015347",
+    "summary_es": "Registro bibliográfico sobre métricas para sistemas complejos. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on metrics for complex systems. The abstract and findings still require review.",
+    "year": 2022,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Adversary engagement"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/wsc57314.2022.10015347",
+      "journal": "2022 Winter Simulation Conference (WSC)",
+      "authors": [
+        "Md Ali Reza Al Amin",
+        "Sachin Shetty",
+        "Charles Kamhoua"
+      ],
+      "source_title": "Cyber Deception Metrics For Interconnected Complex Systems"
+    }
+  },
+  {
+    "id": "doi-10-1109-lcn52139-2021-9525010",
+    "slug": "doi-10-1109-lcn52139-2021-9525010",
+    "kind": "paper",
+    "name": "Failure Modes and Effects Analysis (FMEA) of Honeypot-Based Cybersecurity Experiment for IoT",
+    "organization": "Junaid Haseeb, Masood Mansoori",
+    "source_url": "https://doi.org/10.1109/lcn52139.2021.9525010",
+    "summary_es": "Registro bibliográfico sobre análisis de fallas en experimentos IoT. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on failure analysis in IoT experiments. The abstract and findings still require review.",
+    "year": 2021,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "IoT"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/lcn52139.2021.9525010",
+      "journal": "2021 IEEE 46th Conference on Local Computer Networks (LCN)",
+      "authors": [
+        "Junaid Haseeb",
+        "Masood Mansoori",
+        "Ian Welch"
+      ],
+      "source_title": "Failure Modes and Effects Analysis (FMEA) of Honeypot-Based Cybersecurity Experiment for IoT"
+    }
+  },
+  {
+    "id": "doi-10-11591-ijece-v15i1-pp1089-1098",
+    "slug": "doi-10-11591-ijece-v15i1-pp1089-1098",
+    "kind": "paper",
+    "name": "Fortifying industrial cybersecurity: a novel industrial internet of things architecture enhanced by honeypot integration",
+    "organization": "Oumaima El Kouari, Saiida Lazaar",
+    "source_url": "https://doi.org/10.11591/ijece.v15i1.pp1089-1098",
+    "summary_es": "Registro bibliográfico sobre integración de honeypots en IIoT. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on honeypot integration in industrial IoT. The abstract and findings still require review.",
+    "year": 2025,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "OT/ICS"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.11591/ijece.v15i1.pp1089-1098",
+      "journal": "International Journal of Electrical and Computer Engineering (IJECE)",
+      "authors": [
+        "Oumaima El Kouari",
+        "Saiida Lazaar",
+        "Tarik Achoughi"
+      ],
+      "source_title": "Fortifying industrial cybersecurity: a novel industrial internet of things architecture enhanced by honeypot integration"
+    }
+  },
+  {
+    "id": "doi-10-1109-noms69089-2026-11668367",
+    "slug": "doi-10-1109-noms69089-2026-11668367",
+    "kind": "paper",
+    "name": "CowLLMpot: Toward an LLM-Based Honeypot Fine-Tuned Using Cowrie Honeypot Data",
+    "organization": "Amal Rami, Adrien Fégar",
+    "source_url": "https://doi.org/10.1109/noms69089.2026.11668367",
+    "summary_es": "Registro bibliográfico sobre honeypot con modelo ajustado a datos de Cowrie. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on language-model honeypot tuned on Cowrie data. The abstract and findings still require review.",
+    "year": 2026,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Network"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/noms69089.2026.11668367",
+      "journal": "NOMS 2026-2026 IEEE Network Operations and Management Symposium",
+      "authors": [
+        "Amal Rami",
+        "Adrien Fégar",
+        "Salam Doumiati",
+        "Ayman Alfalou"
+      ],
+      "source_title": "CowLLMpot: Toward an LLM-Based Honeypot Fine-Tuned Using Cowrie Honeypot Data"
+    }
+  },
+  {
+    "id": "doi-10-1109-cloud-2016-0134",
+    "slug": "doi-10-1109-cloud-2016-0134",
+    "kind": "paper",
+    "name": "COR-Honeypot: Copy-On-Risk, Virtual Machine as Honeypot in the Cloud",
+    "organization": "Denis Lavrov, Veronique Blanchet",
+    "source_url": "https://doi.org/10.1109/cloud.2016.0134",
+    "summary_es": "Registro bibliográfico sobre máquinas virtuales señuelo en cloud. El resumen y los resultados aún requieren lectura.",
+    "summary_en": "Bibliographic record on decoy virtual machines in cloud. The abstract and findings still require review.",
+    "year": 2016,
+    "evidence": "publisher-metadata",
+    "status": "published",
+    "reviewed_at": "2026-09-15",
+    "updated_at": "2026-09-15",
+    "data": {
+      "techniques": [
+        "Honeypot"
+      ],
+      "environments": [
+        "Cloud"
+      ],
+      "tags": [
+        "DOI"
+      ],
+      "review_basis": "publisher-metadata",
+      "access_date": "2026-09-15",
+      "doi": "10.1109/cloud.2016.0134",
+      "journal": "2016 IEEE 9th International Conference on Cloud Computing (CLOUD)",
+      "authors": [
+        "Denis Lavrov",
+        "Veronique Blanchet",
+        "Shaoning Pang",
+        "Muyang He",
+        "Abdolhossein Sarrafzadeh"
+      ],
+      "source_title": "COR-Honeypot: Copy-On-Risk, Virtual Machine as Honeypot in the Cloud"
+    }
+  }
+]

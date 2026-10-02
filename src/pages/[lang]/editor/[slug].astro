@@ -1,0 +1,38 @@
+---
+import { env } from 'cloudflare:workers';
+import Base from '../../../layouts/Base.astro';
+import { canReview, editorIdentity } from '../../../lib/admin-auth';
+import { parseData, type Resource, type Language } from '../../../lib/types';
+const lang=Astro.params.lang as Language;
+if(lang!=='es'&&lang!=='en')return Astro.redirect('/es/',302);
+if(!canReview(await editorIdentity(Astro.request)))return Astro.redirect(`/${lang}/editor`,302);
+Astro.response.headers.set('Cache-Control','private, no-store');
+const slug=Astro.params.slug??'';
+const resource=await env.DB.prepare('SELECT * FROM resources WHERE slug=?').bind(slug).first<Resource>();
+if(!resource)return new Response('Not found',{status:404});
+const data=parseData(resource);
+---
+<Base lang={lang} title={resource.name}>
+  <header class="article-head"><p class="breadcrumb"><a href={`/${lang}/editor`}>{lang==='es'?'Gestión editorial':'Editor'}</a></p><h1>{lang==='es'?'Editar':'Edit'}: {resource.name}</h1><p>{lang==='es'?'Al guardar, la ficha pasa a borrador para una nueva revisión. Completá cobertura, profundidad y límites solo con respaldo de la fuente enlazada.':'Saving moves the record to draft for review. Fill coverage, depth and limitations only when supported by the linked source.'}</p></header>
+  <form class="editor-form" action="/api/admin/resource-edit" method="post">
+    <input type="hidden" name="slug" value={resource.slug}/>
+    <input type="hidden" name="expected_updated_at" value={resource.updated_at}/>
+    <label>{lang==='es'?'Nombre':'Name'}<input name="name" value={resource.name} required maxlength="120"/></label>
+    <label>{lang==='es'?'Organización':'Organization'}<input name="organization" value={resource.organization} maxlength="120"/></label>
+    <label>{lang==='es'?'Fuente':'Source'}<input name="source_url" type="url" value={resource.source_url} required/></label>
+    <label>{lang==='es'?'Año':'Year'}<input name="year" type="number" min="1900" max="2100" value={resource.year??''}/></label>
+    <label>{lang==='es'?'Técnicas (separadas por coma)':'Techniques (comma-separated)'}<input name="techniques" value={data.techniques.join(', ')} maxlength="300"/></label>
+    <label>{lang==='es'?'Entornos (separados por coma)':'Environments (comma-separated)'}<input name="environments" value={data.environments.join(', ')} maxlength="300"/></label>
+    <label>{lang==='es'?'País de la organización (verificado)':'Verified organization country'}<input name="organization_country" value={data.organization_country??''} maxlength="80"/></label>
+    <label>{lang==='es'?'Regiones de disponibilidad o uso (coma)':'Availability or use regions (comma)'}<input name="deployment_regions" value={(data.deployment_regions??[]).join(', ')} maxlength="300"/></label>
+    <label>{lang==='es'?'Sectores documentados (coma)':'Documented sectors (comma)'}<input name="sectors" value={(data.sectors??[]).join(', ')} maxlength="300"/></label>
+    <label>{lang==='es'?'Idioma de la fuente (código, ej. en)':'Source language (code, e.g. en)'}<input name="source_language" value={data.source_language??''} maxlength="20"/></label>
+    <label>{lang==='es'?'Profundidad de revisión':'Review depth'}<select name="review_basis"><option value="source-page" selected={data.review_basis==='source-page'}>{lang==='es'?'Página pública':'Public page'}</option><option value="repository-metadata" selected={data.review_basis==='repository-metadata'}>{lang==='es'?'Repositorio':'Repository'}</option><option value="publisher-metadata" selected={data.review_basis==='publisher-metadata'}>{lang==='es'?'Metadatos editoriales':'Publisher metadata'}</option><option value="abstract" selected={data.review_basis==='abstract'}>Abstract</option><option value="full-text" selected={data.review_basis==='full-text'}>{lang==='es'?'Texto completo':'Full text'}</option></select></label>
+    <label>{lang==='es'?'Resumen español':'Spanish summary'}<textarea name="summary_es" required>{resource.summary_es}</textarea></label>
+    <label>{lang==='es'?'Resumen inglés':'English summary'}<textarea name="summary_en" required>{resource.summary_en}</textarea></label>
+    <label>{lang==='es'?'Límites español':'Spanish limitations'}<textarea name="limitations_es">{data.limitations_es??''}</textarea></label>
+    <label>{lang==='es'?'Límites inglés':'English limitations'}<textarea name="limitations_en">{data.limitations_en??''}</textarea></label>
+    <label>{lang==='es'?'Tipo de evidencia':'Evidence statement'}<textarea name="evidence" required>{resource.evidence}</textarea></label>
+    <button class="button" type="submit">{lang==='es'?'Guardar para revisión':'Save for review'}</button>
+  </form>
+</Base>

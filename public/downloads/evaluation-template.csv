@@ -1,0 +1,1 @@
+scenario_id,objective,environment,technique,decoy_or_product,version,baseline,action_time_utc,alert_time_utc,alert_received,alert_investigable,legitimate_action,decoy_detected,installation_hours,maintenance_hours,investigation_hours,safety_incident,source_url,source_access_date,observer,notes

@@ -1,0 +1,23 @@
+{
+  "experiment_id": "http-decoy-pilot-v1",
+  "protocol_version": "1.0",
+  "executed_at_utc": "2026-09-18T18:14:34.858Z",
+  "files": {
+    "summary.json": {
+      "bytes": 1978,
+      "sha256": "cd24a70a92fc3686d892d6ff25c268052e6fd9d2a2d28be110cea30515a67b76"
+    },
+    "observations.csv": {
+      "bytes": 53061,
+      "sha256": "4f619bdbf1ff500d2f9904ab5b1dceaa3cf64f4df8d660e0df8871c0bb32dfa2"
+    },
+    "events.json": {
+      "bytes": 15730,
+      "sha256": "d9faa837d4f46e2516834569665f561de0a30af379b7a2e5ddb6567874abe600"
+    },
+    "report.md": {
+      "bytes": 2166,
+      "sha256": "28c93f337c0df1d94488f53497463c4a6025d220216b98e367cc049e407b0c59"
+    }
+  }
+}
