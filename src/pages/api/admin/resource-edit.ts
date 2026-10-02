@@ -36,8 +36,7 @@ const input = z.object({
 });
 export const POST: APIRoute = async ({ request }) => {
   const identity = sameOrigin(request) ? await editorIdentity(request) : null;
-  if (!canReview(identity))
-    return new Response('Forbidden', { status: 403 });
+  if (!canReview(identity)) return new Response('Forbidden', { status: 403 });
   const form = await request.formData();
   const parsed = input.safeParse(
     Object.fromEntries(
@@ -69,7 +68,8 @@ export const POST: APIRoute = async ({ request }) => {
     .bind(value.slug)
     .first<Resource>();
   if (!before) return new Response('Not found', { status: 404 });
-  if (!expectedUpdatedAt || expectedUpdatedAt !== before.updated_at) return new Response('Record changed during review', { status: 409 });
+  if (!expectedUpdatedAt || expectedUpdatedAt !== before.updated_at)
+    return new Response('Record changed during review', { status: 409 });
   const now = new Date().toISOString();
   const data = JSON.parse(before.data) as Record<string, unknown>;
   const split = (text: string) =>
@@ -161,7 +161,9 @@ export const POST: APIRoute = async ({ request }) => {
       now,
     ),
   ]);
-  const recorded = await env.DB.prepare('SELECT id FROM revisions WHERE id=?').bind(revisionId).first();
+  const recorded = await env.DB.prepare('SELECT id FROM revisions WHERE id=?')
+    .bind(revisionId)
+    .first();
   if (!recorded) return new Response('Record changed during review', { status: 409 });
   return Response.redirect(new URL('/es/editor', request.url), 303);
 };

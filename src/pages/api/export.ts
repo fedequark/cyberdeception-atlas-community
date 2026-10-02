@@ -73,7 +73,9 @@ export const GET: APIRoute = async ({ request }) => {
   });
   let releaseVersion = 'v2026.09.2';
   try {
-    const state = await env.DB.prepare('SELECT version FROM release_state WHERE singleton=1').first<{version:string}>();
+    const state = await env.DB.prepare(
+      'SELECT version FROM release_state WHERE singleton=1',
+    ).first<{ version: string }>();
     if (state?.version) releaseVersion = state.version;
   } catch {
     // Existing deployments can serve the historical release before migration 0005.

@@ -1,5 +1,5 @@
 {
-  "source_commit": "99078f2b78a30450241fd0f639c67baf891ff5ea",
+  "source_commit": "2319105f753270d75627e382db03ce5fdf19e5c6",
   "included_files": 227,
   "excluded_tracked_files": 1065,
   "high_confidence_pattern_paths": [],
@@ -9,6 +9,7 @@
     "README.md": "docs/PUBLIC-MIRROR-README.md",
     "SECURITY.md": "docs/PUBLIC-MIRROR-SECURITY.md",
     "wrangler.jsonc": "local-only binding with no production domains",
+    ".github/workflows/ci.yml": "omit private research validation step",
     "package.json": "restricted scripts from root package.json"
   },
   "files": {
@@ -25,8 +26,8 @@
       "sha256": "864043290929f2e4ba1a81adcd4bcdc615847f801c852828307fa209d1b8ce87"
     },
     ".github/workflows/ci.yml": {
-      "bytes": 457,
-      "sha256": "53a0671bd9673d7f10c26c570012fa57bb0ca78a51d3f3271bf9629a69bfb979"
+      "bytes": 422,
+      "sha256": "2036ecd12a880eb70c07db399883747b4567a1e00ffdd156c5af671e41ed72f6"
     },
     ".gitignore": {
       "bytes": 337,
@@ -785,8 +786,8 @@
       "sha256": "1ec6f9abfd01ce57c6c13a9ef2d3878a1466452b1cee42b12679fd45c41fa2b3"
     },
     "src/pages/api/admin/resource-edit.ts": {
-      "bytes": 5614,
-      "sha256": "b01fef9d696fcd13756c380a3becbd4a64971c1f20be5cabc687ab62de87928a"
+      "bytes": 5624,
+      "sha256": "367b0f99b9c668aacf7b10472761ab829ae2f58f27ba2ab7d69821357a9a3ad5"
     },
     "src/pages/api/admin/resource-status.ts": {
       "bytes": 2411,
@@ -813,8 +814,8 @@
       "sha256": "f522a2cc777eaf4edcb69748e860a56f31c12c41982cff04d0cbcb46b1776801"
     },
     "src/pages/api/export.ts": {
-      "bytes": 5410,
-      "sha256": "4c63bc0b7f6570e2c9abfd845dacaecc59ab5140dc9a7f72a655e618e4de785e"
+      "bytes": 5426,
+      "sha256": "647b5da93ef49af04a89178ea43fddf5923ada5bd9e0940350246dfb8b2cace5"
     },
     "src/pages/api/submit.ts": {
       "bytes": 2901,
