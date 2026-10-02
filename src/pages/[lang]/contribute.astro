@@ -23,6 +23,12 @@ const proposalTypes = [
     <h1>{lang === 'es' ? 'Proponé una contribución' : 'Propose a contribution'}</h1>
     <p>{t.contributeIntro}</p>
     <p>{lang === 'es' ? 'La propuesta entra en una cola privada para curación. Su aceptación no publica una ficha automáticamente. No envíes credenciales, ubicaciones reales de señuelos, telemetría personal ni textos de terceros que no puedas compartir.' : 'Your proposal enters a private curation queue. Acceptance does not automatically publish a record. Do not send credentials, real decoy locations, personal telemetry or third-party text you cannot share.'}</p>
+    <p>
+      {lang === 'es' ? 'Para código o propuestas públicas, visitá el ' : 'For code or public proposals, visit the '}
+      <a href="https://github.com/fedequark/cyberdeception-atlas-community">{lang === 'es' ? 'repositorio comunitario' : 'community repository'}</a>.
+      {' '}{lang === 'es' ? 'Para vulnerabilidades, usá el ' : 'For vulnerabilities, use the '}
+      <a href="https://github.com/fedequark/cyberdeception-atlas-community/security/advisories">{lang === 'es' ? 'reporte privado de GitHub' : 'private GitHub report'}</a>.
+    </p>
     <p><a href={`/${lang}/methodology`}>{lang === 'es' ? 'Ver criterios editoriales' : 'Read editorial criteria'} →</a></p>
   </header>
   <div class="form-narrow panel" style="margin-top:28px">

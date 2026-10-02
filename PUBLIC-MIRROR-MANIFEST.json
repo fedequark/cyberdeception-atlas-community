@@ -1,5 +1,5 @@
 {
-  "source_commit": "609cb03c6b410cd9e33cbcd96bb5b4c032608a56",
+  "source_commit": "99078f2b78a30450241fd0f639c67baf891ff5ea",
   "included_files": 227,
   "excluded_tracked_files": 1065,
   "high_confidence_pattern_paths": [],
@@ -325,8 +325,8 @@
       "sha256": "f972a709f186e4bf2d18c2d44f150c255772ae37076373e8f764f4ca52f6885d"
     },
     "docs/PUBLIC-MIRROR-STRATEGY.md": {
-      "bytes": 2289,
-      "sha256": "ea911a43a3843965413e17cd30f7de0f9cd1e0210d21d0488e587913fe211889"
+      "bytes": 2572,
+      "sha256": "8a1fabd5bb8c4417b9cc339c7fdf7faa92fc97cad420154fed1a51850a8b5069"
     },
     "docs/research/CODEBOOK.md": {
       "bytes": 11484,
@@ -701,8 +701,8 @@
       "sha256": "f9e05ccfb1dd7225804a138ee7a63f27a42e1940a45ed1ea77e8c2b6700a7a28"
     },
     "src/pages/[lang]/contribute.astro": {
-      "bytes": 4988,
-      "sha256": "46c98e2bbdc38b1182de7effaf7513fd74168cacb95fbbeadeba923db723e927"
+      "bytes": 5545,
+      "sha256": "df43c70fe4ca93e9d92a88f6d7547b3cb69f92909ae3b62bf43c51be86d2f93f"
     },
     "src/pages/[lang]/coverage.astro": {
       "bytes": 12663,
