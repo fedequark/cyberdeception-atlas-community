@@ -1,6 +1,6 @@
 {
-  "source_commit": "2319105f753270d75627e382db03ce5fdf19e5c6",
-  "included_files": 227,
+  "source_commit": "a3f1f827dca7e2b88854ef7e78ef3e0f19041ec6",
+  "included_files": 228,
   "excluded_tracked_files": 1065,
   "high_confidence_pattern_paths": [],
   "rights_review": "pending for binary packages and third-party-derived material",
@@ -322,12 +322,16 @@
       "sha256": "d0e95545e721f1eeb810fb5b9650649fc3259447287a1a85f033d9a5bb931fbe"
     },
     "docs/PUBLIC-MIRROR-README.md": {
-      "bytes": 2151,
-      "sha256": "f972a709f186e4bf2d18c2d44f150c255772ae37076373e8f764f4ca52f6885d"
+      "bytes": 2253,
+      "sha256": "ca12455dab2bd2d469bd8d88684ce8bd39b833bb0986f1880a6e04c467addf7f"
     },
     "docs/PUBLIC-MIRROR-STRATEGY.md": {
       "bytes": 2572,
       "sha256": "8a1fabd5bb8c4417b9cc339c7fdf7faa92fc97cad420154fed1a51850a8b5069"
+    },
+    "docs/community/CONTRIBUTION-EXAMPLES.md": {
+      "bytes": 6052,
+      "sha256": "c18420d52cd4f3b3f389154b3f46137439a3b256bec4b4395de3b38304bbbaf7"
     },
     "docs/research/CODEBOOK.md": {
       "bytes": 11484,
@@ -914,8 +918,8 @@
       "sha256": "504ff22d0f207892a07de560bc50a9876e4d24e9e6339fbd225fc5fcfa4b7802"
     },
     "README.md": {
-      "bytes": 2151,
-      "sha256": "f972a709f186e4bf2d18c2d44f150c255772ae37076373e8f764f4ca52f6885d"
+      "bytes": 2253,
+      "sha256": "ca12455dab2bd2d469bd8d88684ce8bd39b833bb0986f1880a6e04c467addf7f"
     },
     "package.json": {
       "bytes": 1721,
